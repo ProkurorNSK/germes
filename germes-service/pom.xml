@@ -7,6 +7,7 @@
     <version>0.0.6</version>
   </parent>
   <artifactId>germes-service</artifactId>
+  <!--
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -18,15 +19,27 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  -->
   <dependencies>
     <dependency>
       <groupId>ru.prokurornsk</groupId>
       <artifactId>germes-model</artifactId>
-      <version>0.0.6</version>
+      <version>${project.parent.version}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-grizzly2-http</artifactId>
+      <version>2.26</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+      <version>2.26</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>2.26</version>
     </dependency>
   </dependencies>
 </project>
