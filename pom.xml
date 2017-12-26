@@ -9,6 +9,7 @@
     <module>germes-presentation</module>
     <module>germes-model</module>
     <module>germes-persistence</module>
+    <module>germes-service</module>
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
