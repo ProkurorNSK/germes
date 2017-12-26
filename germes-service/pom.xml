@@ -4,7 +4,29 @@
   <parent>
     <groupId>ru.prokurornsk</groupId>
     <artifactId>germes</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.6</version>
   </parent>
   <artifactId>germes-service</artifactId>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.glassfish.jersey</groupId>
+        <artifactId>jersey-bom</artifactId>
+        <version>${jersey.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>ru.prokurornsk</groupId>
+      <artifactId>germes-model</artifactId>
+      <version>0.0.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-grizzly2-http</artifactId>
+    </dependency>
+  </dependencies>
 </project>
