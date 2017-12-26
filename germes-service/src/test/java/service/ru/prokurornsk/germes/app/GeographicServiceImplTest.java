@@ -1,8 +1,9 @@
-package ru.prokurornsk.germes.app.service;
+package service.ru.prokurornsk.germes.app;
 
 import org.junit.Before;
 import org.junit.Test;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
+import ru.prokurornsk.germes.app.service.GeographicService;
 import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
 
 import java.util.List;
