@@ -11,7 +11,7 @@ import static ru.prokurornsk.germes.app.infra.util.CommonUtil.getSafeList;
 /**
  * Default implementation of the {@link GeographicService}
  *
- * @author Morenets
+ * @author prokuror
  */
 
 public class GeographicServiceImpl implements GeographicService {
