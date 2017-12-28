@@ -64,8 +64,7 @@ public class ReflectionUtil {
      */
     public static void copyFields(Object src, Object dest, List<String> fields) throws ConfigurationException {
         Checks.checkParameter(src != null, "Source object is not initialized");
-        Checks.checkParameter(dest != null,
-                "Destination object is not initialized");
+        Checks.checkParameter(dest != null, "Destination object is not initialized");
         try {
             for (String field : fields) {
                 Field fld = src.getClass().getDeclaredField(field);
@@ -82,8 +81,7 @@ public class ReflectionUtil {
                     }
                 }
             }
-        } catch (SecurityException | ReflectiveOperationException
-                | IllegalArgumentException ex) {
+        } catch (SecurityException | ReflectiveOperationException | IllegalArgumentException ex) {
             throw new ConfigurationException(ex);
         }
     }

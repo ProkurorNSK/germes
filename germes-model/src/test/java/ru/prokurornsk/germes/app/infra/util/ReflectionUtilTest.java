@@ -1,4 +1,4 @@
-package ru.prokurornsk.germes.app.unfra.util;
+package ru.prokurornsk.germes.app.infra.util;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,6 @@ import java.util.List;
 import ru.prokurornsk.germes.app.infra.exception.ConfigurationException;
 import ru.prokurornsk.germes.app.infra.exception.flow.InvalidParameterException;
 import org.junit.Test;
-import ru.prokurornsk.germes.app.infra.util.ReflectionUtil;
 
 /**
  * Verifies functionality of the {@link ReflectionUtil} unit

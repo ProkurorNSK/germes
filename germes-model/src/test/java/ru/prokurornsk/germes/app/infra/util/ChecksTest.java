@@ -1,4 +1,4 @@
-package ru.prokurornsk.germes.app.unfra.util;
+package ru.prokurornsk.germes.app.infra.util;
 
 import org.junit.Test;
 import ru.prokurornsk.germes.app.infra.exception.flow.InvalidParameterException;
