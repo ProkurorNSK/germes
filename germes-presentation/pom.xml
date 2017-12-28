@@ -13,6 +13,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.0</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
@@ -29,12 +30,10 @@
     </plugins>
   </build>
   <dependencies>
-    <!--
     <dependency>
       <groupId>ru.prokurornsk</groupId>
       <artifactId>germes-service</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
-    -->
   </dependencies>
 </project>

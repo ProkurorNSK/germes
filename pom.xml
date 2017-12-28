@@ -18,7 +18,7 @@
     <junit.jupiter.version>5.0.2</junit.jupiter.version>
     <junit.vintage.version>${junit.version}.2</junit.vintage.version>
     <junit.platform.version>1.0.2</junit.platform.version>
-    <jersey.version>2.26</jersey.version>
+    <jersey.version>2.25</jersey.version>
   </properties>
   <build>
     <plugins>
