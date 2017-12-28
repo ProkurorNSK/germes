@@ -35,11 +35,12 @@ public class City extends AbstractEntity {
      */
     private Set<Station> stations;
 
+    public City() {
+    }
 
     public City(final String name) {
         this.name = name;
     }
-
 
     public String getName() {
         return name;
