@@ -19,6 +19,7 @@
     <junit.vintage.version>${junit.version}.2</junit.vintage.version>
     <junit.platform.version>1.0.2</junit.platform.version>
     <jersey.version>2.25</jersey.version>
+    <log4j.version>2.9.1</log4j.version>
   </properties>
   <build>
     <plugins>
@@ -70,6 +71,31 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>23.6-jre</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.7</version>
     </dependency>
   </dependencies>
 </project>
