@@ -1,11 +1,10 @@
 package ru.prokurornsk.germes.app.transform.impl;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.prokurornsk.germes.app.infra.util.Checks;
 import ru.prokurornsk.germes.app.infra.util.ReflectionUtil;
+import ru.prokurornsk.germes.app.infra.util.CommonUtil;
 import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
 import ru.prokurornsk.germes.app.rest.dto.base.BaseDTO;
 import ru.prokurornsk.germes.app.transform.Transformer;
@@ -28,7 +27,7 @@ public class SimpleDTOTransformer implements Transformer {
         dto.transform(entity);
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("SimpleDTOTransformer.transform: {} DTO object", ReflectionToStringBuilder.toString(dto, ToStringStyle.SHORT_PREFIX_STYLE));
+            LOGGER.debug("SimpleDTOTransformer.transform: {} DTO object", CommonUtil.toString(dto));
         }
         return dto;
     }
@@ -48,7 +47,7 @@ public class SimpleDTOTransformer implements Transformer {
         dto.untransform(entity);
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("SimpleDTOTransformer.transform: {} entity", ReflectionToStringBuilder.toString(entity, ToStringStyle.SHORT_PREFIX_STYLE));
+            LOGGER.debug("SimpleDTOTransformer.transform: {} entity", CommonUtil.toString(entity));
         }
 
         return entity;
