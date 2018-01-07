@@ -1,6 +1,12 @@
 package ru.prokurornsk.germes.app.transform;
 
+import mockit.Expectations;
+import mockit.Mock;
+import mockit.MockUp;
+import mockit.Mocked;
+import mockit.integration.junit4.JMockit;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
@@ -20,13 +26,17 @@ import static org.mockito.Mockito.*;
 /**
  * Verifies functionality of the {@link SimpleDTOTransformer}
  * unit
- * @author Morenets
  *
+ * @author Morenets
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(ReflectionUtil.class)
+//@RunWith(JMockit.class)
 public class CachedFieldProviderTest {
     private FieldProvider provider;
+
+//    @Mocked
+//    private final ReflectionUtil reflectionUtil = null;
 
     @Before
     public void setup() {
@@ -49,6 +59,7 @@ public class CachedFieldProviderTest {
     }
 
     @Test
+ //   @Ignore
     public void testGetFieldNamesAreCached() {
         List<String> fields = provider.getFieldNames(Source.class, Destination.class);
 
@@ -60,6 +71,57 @@ public class CachedFieldProviderTest {
         assertFalse(fields.isEmpty());
         assertEquals(fields, fields2);
     }
+
+/*    @Test
+    //@Ignore
+    public void testGetFieldNamesAreCachedUsingJMockit() {
+        new Expectations() {
+            {
+                ReflectionUtil.findSimilarFields(Source.class, Destination.class);
+                result = Collections.singletonList("name");
+            }
+        };
+
+        List<String> fields = provider.getFieldNames(Source.class, Destination.class);
+
+        new Expectations() {
+            {
+                ReflectionUtil.findSimilarFields(Source.class, Destination.class);
+                result = Collections.emptyList();
+            }
+        };
+
+        assertTrue(ReflectionUtil.findSimilarFields(Source.class, Destination.class).isEmpty());
+        List<String> fields2 = provider.getFieldNames(Source.class, Destination.class);
+        assertFalse(fields.isEmpty());
+        assertEquals(fields, fields2);
+    }
+
+    public static final class MockReflectionUtil extends MockUp<ReflectionUtil> {
+        protected static List<String> fields;
+
+        @Mock
+        public static List<String> findSimilarFields(Class<?> clz1, Class<?> clz2) {
+            return fields;
+        }
+    }
+
+    @Test
+    @Ignore
+    public void testGetFieldNamesAreCachedUsingMockupsAPI() {
+        new MockReflectionUtil();
+
+        MockReflectionUtil.fields = Collections.singletonList("name");
+
+        List<String> fields = provider.getFieldNames(Source.class, Destination.class);
+
+        MockReflectionUtil.fields = Collections.emptyList();
+
+        assertTrue(ReflectionUtil.findSimilarFields(Source.class, Destination.class).isEmpty());
+        List<String> fields2 = provider.getFieldNames(Source.class, Destination.class);
+        assertFalse(fields.isEmpty());
+        assertEquals(fields, fields2);
+    }*/
 }
 
 class Source {
