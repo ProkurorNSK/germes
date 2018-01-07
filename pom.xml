@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ru.prokurornsk</groupId>
   <artifactId>germes</artifactId>
-  <version>0.2.0 </version>
+  <version>0.2.1 </version>
   <packaging>pom</packaging>
   <modules>
     <module>germes-presentation</module>
@@ -20,6 +20,7 @@
     <junit.platform.version>1.0.2</junit.platform.version>
     <jersey.version>2.25</jersey.version>
     <log4j.version>2.9.1</log4j.version>
+    <powermock.version>1.7.3</powermock.version>
   </properties>
   <build>
     <plugins>
