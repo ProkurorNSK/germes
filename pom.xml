@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ru.prokurornsk</groupId>
   <artifactId>germes</artifactId>
-  <version>0.2.2 </version>
+  <version>0.2.5 </version>
   <packaging>pom</packaging>
   <modules>
     <module>germes-presentation</module>
@@ -15,13 +15,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
     <junit.version>4.12</junit.version>
-    <junit.jupiter.version>5.0.2</junit.jupiter.version>
-    <junit.vintage.version>${junit.version}.2</junit.vintage.version>
-    <junit.platform.version>1.0.2</junit.platform.version>
     <jersey.version>2.25</jersey.version>
     <log4j.version>2.9.1</log4j.version>
     <powermock.version>1.7.3</powermock.version>
-    <jmockit.version>1.38</jmockit.version>
   </properties>
   <build>
     <plugins>
@@ -37,36 +33,9 @@
   </build>
   <dependencies>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>${junit.jupiter.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Only required to run tests in an IDE that bundles an older version -->
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-launcher</artifactId>
-      <version>${junit.platform.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Only required to run tests in an IDE that bundles an older version -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>${junit.jupiter.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Only required to run tests in an IDE that bundles an older version -->
-    <dependency>
-      <groupId>org.junit.vintage</groupId>
-      <artifactId>junit-vintage-engine</artifactId>
-      <version>${junit.vintage.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
