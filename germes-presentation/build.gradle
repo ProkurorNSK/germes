@@ -3,6 +3,7 @@ plugins {
 }
 
 apply plugin: 'war'
+//apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 
 dependencies {
   compile project(':germes-service')
@@ -21,3 +22,9 @@ tomcat {
   httpPort = 80
   contextPath = '/'
 }
+
+//gretty {
+//  httpPort = 80
+//  contextPath = '/'
+//  // ... many more properties
+//}
