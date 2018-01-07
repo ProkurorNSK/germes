@@ -30,7 +30,7 @@ public interface GeographicService {
      * @param id
      * @return
      */
-    Optional<City> findCitiyById(int id);
+    Optional<City> findCityById(int id);
 
     /**
      * Returns all the stations that match specified criteria

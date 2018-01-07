@@ -37,12 +37,12 @@ public class GeographicServiceImplTest {
 
     @Test
     public void testSaveNewCitySuccess() {
-        City city = new City("Novosibirsk");
+        City city = new City("Odessa");
         service.saveCity(city);
 
         List<City> cities = service.findCities();
         assertEquals(cities.size(), 1);
-        assertEquals(cities.get(0).getName(), "Novosibirsk");
+        assertEquals(cities.get(0).getName(), "Odessa");
     }
 
     @Test
@@ -50,14 +50,14 @@ public class GeographicServiceImplTest {
         City city = new City("Odessa");
         service.saveCity(city);
 
-        Optional<City> foundCity = service.findCitiyById(DEFAULT_CITY_ID);
+        Optional<City> foundCity = service.findCityById(DEFAULT_CITY_ID);
         assertTrue(foundCity.isPresent());
         assertEquals(foundCity.get().getId(), DEFAULT_CITY_ID);
     }
 
     @Test
     public void testFindCityByIdNotFound() {
-        Optional<City> foundCity = service.findCitiyById(DEFAULT_CITY_ID);
+        Optional<City> foundCity = service.findCityById(DEFAULT_CITY_ID);
         assertFalse(foundCity.isPresent());
     }
 

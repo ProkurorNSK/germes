@@ -1,7 +1,9 @@
 package ru.prokurornsk.germes.app.model.entity.geography;
 
+import org.apache.commons.lang3.StringUtils;
 import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
 import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
+import ru.prokurornsk.germes.app.model.search.criteria.StationCriteria;
 
 import java.util.Objects;
 
@@ -36,6 +38,23 @@ public class Station extends AbstractEntity {
     public Station(final City city, final TransportType transportType) {
         this.city = Objects.requireNonNull(city);
         this.transportType = Objects.requireNonNull(transportType);
+    }
+
+    public boolean match(final StationCriteria criteria) {
+        Objects.requireNonNull(criteria, "Station criteria is not initialized");
+        if (!StringUtils.isEmpty(criteria.getName())) {
+            if (!city.getName().equals(criteria.getName())) {
+                return false;
+            }
+        }
+
+        if (criteria.getTransportType() != null) {
+            if (transportType != criteria.getTransportType()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void setCity(final City city) {

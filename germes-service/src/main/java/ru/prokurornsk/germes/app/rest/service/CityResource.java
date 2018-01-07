@@ -1,12 +1,21 @@
 package ru.prokurornsk.germes.app.rest.service;
 
-import com.google.common.collect.Lists;
+import org.apache.commons.lang3.math.NumberUtils;
+import ru.prokurornsk.germes.app.model.entity.geography.City;
+import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
+import ru.prokurornsk.germes.app.rest.dto.CityDTO;
+import ru.prokurornsk.germes.app.rest.service.base.BaseResource;
+import ru.prokurornsk.germes.app.service.GeographicService;
+import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
+import ru.prokurornsk.germes.app.transform.Transformer;
+import ru.prokurornsk.germes.app.transform.impl.SimpleDTOTransformer;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * {@link CityResource} is REST web-service that handles city-related requests
@@ -14,11 +23,64 @@ import java.util.List;
  * @author Morenets
  */
 @Path("cities")
-public class CityResource {
+public class CityResource extends BaseResource {
+
+    /**
+     * Underlying source of data
+     */
+    private final GeographicService service;
+
+    /**
+     * DTO <-> Entity transformer
+     */
+    private final Transformer transformer;
+
+    public CityResource() {
+        transformer = new SimpleDTOTransformer();
+
+        service = new GeographicServiceImpl();
+        City city = new City("Odessa");
+        city.addStation(TransportType.AUTO);
+        service.saveCity(city);
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<String> findCities() {
-        return Lists.newArrayList("Odessa", "Kiyv");
+    /**
+     * Returns all the existing cities
+     * @return
+     */
+    public List<CityDTO> findCities() {
+        return service.findCities().stream().map((city) -> transformer.transform(city, CityDTO.class))
+                .collect(Collectors.toList());
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    /**
+     * Saves new city instance
+     * @return
+     */
+    public void saveCity(CityDTO cityDTO) {
+        service.saveCity(transformer.untransform(cityDTO, City.class));
+    }
+
+    @Path("/{cityId}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    /**
+     * Returns city with specified identifier
+     * @return
+     */
+    public Response findCityById(@PathParam("cityId") final String cityId) {
+        if (!NumberUtils.isCreatable(cityId)) {
+            return BAD_REQUEST;
+        }
+
+        Optional<City> city = service.findCityById(NumberUtils.toInt(cityId));
+        if (!city.isPresent()) {
+            return NOT_FOUND;
+        }
+        return ok(transformer.transform(city.get(), CityDTO.class));
     }
 }
