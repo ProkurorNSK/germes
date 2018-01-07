@@ -1,7 +1,7 @@
 allprojects {
   apply plugin: 'maven'
   group = 'ru.prokurornsk'
-  version = '0.2.5'
+  version = '0.2.6'
 }
 subprojects {
   ext {
@@ -10,7 +10,7 @@ subprojects {
     jerseyVersion = '2.25'
     slf4jVersion = '1.7.25'
     log4jVersion = '2.9.1'
-    powerMockVersion = '1.7.3'
+    powerMockVersion = '1.6.4'
   }
   apply plugin: 'java'
   sourceCompatibility = 1.8

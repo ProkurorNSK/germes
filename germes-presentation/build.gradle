@@ -1,15 +1,15 @@
-plugins {
+/*plugins {
 	id "com.bmuschko.tomcat" version "2.4.2"
-}
+}*/
 
 apply plugin: 'war'
-//apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 
 dependencies {
   compile project(':germes-service')
 }
 
-dependencies {
+/*dependencies {
   def tomcatVersion = '9.0.1'
   tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
          "org.apache.tomcat.embed:tomcat-embed-logging-juli:9.0.0.M6",
@@ -21,10 +21,10 @@ tomcat {
   ajpProtocol  = 'org.apache.coyote.ajp.AjpNio2Protocol'
   httpPort = 80
   contextPath = '/'
-}
+}*/
 
-//gretty {
-//  httpPort = 80
-//  contextPath = '/'
-//  // ... many more properties
-//}
+gretty {
+  httpPort = 80
+  contextPath = '/'
+  // ... many more properties
+}
