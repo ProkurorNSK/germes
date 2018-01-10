@@ -4,7 +4,14 @@
   <parent>
     <groupId>ru.prokurornsk</groupId>
     <artifactId>germes</artifactId>
-    <version>0.2.7</version>
+    <version>0.2.8</version>
   </parent>
   <artifactId>germes-persistence</artifactId>
+  <dependencies>
+    <dependency>
+      <groupId>ru.prokurornsk</groupId>
+      <artifactId>germes-model</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+  </dependencies>
 </project>
