@@ -4,6 +4,8 @@ import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.model.entity.geography.Station;
 import ru.prokurornsk.germes.app.model.search.criteria.StationCriteria;
 import ru.prokurornsk.germes.app.model.search.criteria.range.RangeCriteria;
+import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
+import ru.prokurornsk.germes.app.persistence.repository.inmemory.InMemoryCityRepository;
 import ru.prokurornsk.germes.app.service.GeographicService;
 
 import java.util.*;
@@ -19,51 +21,31 @@ import static ru.prokurornsk.germes.app.infra.util.CommonUtil.getSafeList;
 
 public class GeographicServiceImpl implements GeographicService {
 
-    /**
-     * Internal list of cities
-     */
-    private final List<City> cities;
-
-    /**
-     * Auto-increment counter for entity id generation
-     */
-    private int counter = 0;
-    private int stationCounter = 0;
+    private final CityRepository cityRepository;
 
     public GeographicServiceImpl() {
-        this.cities = new ArrayList<>();
+        cityRepository = new InMemoryCityRepository();
     }
 
     @Override
     public List<City> findCities() {
-        return getSafeList(cities);
+        return cityRepository.findAll();
     }
 
     @Override
     public Optional<City> findCityById(int id) {
-        return cities.stream().filter((city) -> city.getId() == id).findFirst();
+        return Optional.ofNullable(cityRepository.findById(id));
     }
 
     @Override
     public List<Station> searchStations(StationCriteria criteria, RangeCriteria rangeCriteria) {
         Set<Station> stations = new HashSet<>();
-        for (City city : cities) {
-            stations.addAll(city.getStations());
-        }
-
-        return stations.stream().filter((station) -> station.match(criteria)).collect(Collectors.toList());
+        cityRepository.findAll().forEach(city -> stations.addAll(city.getStations()));
+        return stations.stream().filter(station -> station.match(criteria)).collect(Collectors.toList());
     }
 
     @Override
     public void saveCity(City city) {
-        if (!cities.contains(city)) {
-            city.setId(++counter);
-            cities.add(city);
-        }
-        city.getStations().forEach((station) -> {
-            if (station.getId() == 0) {
-                station.setId(++stationCounter);
-            }
-        });
+        cityRepository.save(city);
     }
 }
