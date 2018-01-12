@@ -4,7 +4,7 @@ import ru.prokurornsk.germes.app.infra.exception.base.AppException;
 
 /**
  * Signals about exceptional cases in the application logic
- * @author Morenets
+ * @author ProkurorNSK
  *
  */
 public class FlowException extends AppException {

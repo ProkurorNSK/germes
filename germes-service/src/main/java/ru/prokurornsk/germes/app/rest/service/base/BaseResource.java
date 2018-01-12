@@ -5,7 +5,7 @@ import javax.ws.rs.core.Response;
 /**
  * Base class for all REST web-services
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public abstract class BaseResource {
     /**

@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Base functionality of the field preparation
- * @author Morenets
+ * @author ProkurorNSK
  *
  */
 public class FieldProvider {

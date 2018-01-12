@@ -10,7 +10,7 @@ import javax.ws.rs.ext.Provider;
 /**
  * Global Jersey handler that catches any Exception-based errors
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 @Provider
 public class GlobalExceptionHandler implements ExceptionMapper<Exception> {

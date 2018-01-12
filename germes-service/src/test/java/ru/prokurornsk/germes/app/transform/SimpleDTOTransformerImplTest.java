@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * Verifies functionality of the {@link SimpleDTOTransformer}
  * unit
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class SimpleDTOTransformerImplTest {
     private Transformer transformer;

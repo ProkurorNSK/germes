@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Defines CRUD methods to access City objects in the persistent storage
- * @author Morenets
+ * @author ProkurorNSK
  *
  */
 public interface CityRepository {

@@ -19,7 +19,7 @@ import java.util.Map;
  * {@link CityResourceTest} is integration test that verifies
  * {@link CityResource}
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class CityResourceTest extends JerseyTest {
     @Override

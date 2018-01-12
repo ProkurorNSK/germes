@@ -5,7 +5,7 @@ import ru.prokurornsk.germes.app.infra.exception.flow.InvalidParameterException;
 /**
  * Contains common check routines
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class Checks {
     private Checks() {

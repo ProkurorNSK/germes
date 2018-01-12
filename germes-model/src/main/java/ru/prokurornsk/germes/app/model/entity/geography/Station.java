@@ -11,7 +11,7 @@ import java.util.Objects;
  * Station where passengers can get off or take specific kind
  * of transport. Multiple stationts compose route of the trip.
  *
- * @author admin
+ * @author ProkurorNSK
  */
 public class Station extends AbstractEntity {
     private City city;

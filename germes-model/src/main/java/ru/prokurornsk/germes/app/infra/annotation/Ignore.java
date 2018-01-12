@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * Fields annotated with this annotation will be skipped
  * during field-to-field copying
- * @author Morenets
+ * @author ProkurorNSK
  *
  */
 @Target(ElementType.FIELD)

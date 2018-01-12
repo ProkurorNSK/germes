@@ -5,7 +5,7 @@ import ru.prokurornsk.germes.app.infra.util.Checks;
 /**
  * Pagination parameters for data retrieval operations
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class RangeCriteria {
     /**

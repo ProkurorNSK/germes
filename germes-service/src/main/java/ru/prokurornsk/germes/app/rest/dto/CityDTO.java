@@ -6,7 +6,7 @@ import ru.prokurornsk.germes.app.rest.dto.base.BaseDTO;
 /**
  * Holds city state for the client-server communication
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class CityDTO extends BaseDTO<City> {
     private String name;

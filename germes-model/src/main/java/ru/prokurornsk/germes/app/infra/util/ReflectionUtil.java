@@ -13,7 +13,7 @@ import ru.prokurornsk.germes.app.infra.exception.ConfigurationException;
 /**
  * Contains reflection-related utility operations
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class ReflectionUtil {
     private ReflectionUtil() {

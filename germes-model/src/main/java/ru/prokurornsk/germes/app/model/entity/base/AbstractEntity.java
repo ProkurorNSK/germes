@@ -4,7 +4,7 @@
  * These classes contain the AbstractEntity.
  * </p>
  *
- * @author prokuror
+ * @author ProkurorNSK
  * @version 1.0
  * @since 1.0
  */
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 /**
  * Base class for all business entities.
  *
- * @author prokuror
+ * @author ProkurorNSK
  * @version 1.0
  */
 public class AbstractEntity {

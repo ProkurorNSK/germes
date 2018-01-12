@@ -21,7 +21,7 @@ import static org.mockito.Mockito.*;
  * Verifies functionality of the {@link SimpleDTOTransformer}
  * unit
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(ReflectionUtil.class)

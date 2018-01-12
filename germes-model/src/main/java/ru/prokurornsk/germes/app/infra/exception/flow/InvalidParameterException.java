@@ -4,7 +4,7 @@ import ru.prokurornsk.germes.app.infra.exception.FlowException;
 
 /**
  * Signals that incorrect parameter was passed to method/constructor
- * @author Morenets
+ * @author ProkurorNSK
  *
  */
 public class InvalidParameterException extends FlowException {

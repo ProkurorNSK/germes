@@ -12,7 +12,7 @@ import java.util.Optional;
  * Entry point to perform operations
  * over geographic entities
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public interface GeographicService {
 

@@ -13,7 +13,7 @@ import org.junit.Test;
 /**
  * Verifies functionality of the {@link ReflectionUtil} unit
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class ReflectionUtilTest {
     @Test

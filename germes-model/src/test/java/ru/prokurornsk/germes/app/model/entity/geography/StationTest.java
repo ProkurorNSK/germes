@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Verifies functionality of the {@link Station} domain entity
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class StationTest {
     @Test(expected = NullPointerException.class)

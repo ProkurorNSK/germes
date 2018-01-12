@@ -3,7 +3,7 @@ package ru.prokurornsk.germes.app.model.entity.geography;
 /**
  * Geographical coordinate of an object.
  *
- * @author prokuror
+ * @author ProkurorNSK
  */
 public class Coordinate {
     private double x;

@@ -5,7 +5,7 @@ import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
 /**
  * Filtering criteria for search stations operation.
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class StationCriteria {
     /**

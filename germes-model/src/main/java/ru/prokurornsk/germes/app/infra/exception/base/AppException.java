@@ -2,7 +2,7 @@ package ru.prokurornsk.germes.app.infra.exception.base;
 
 /**
  * Base class for all application-specific exceptions
- * @author Morenets
+ * @author ProkurorNSK
  *
  */
 public abstract class AppException extends RuntimeException {

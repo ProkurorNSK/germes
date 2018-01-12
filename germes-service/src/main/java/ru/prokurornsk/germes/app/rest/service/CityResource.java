@@ -10,6 +10,7 @@ import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
 import ru.prokurornsk.germes.app.transform.Transformer;
 import ru.prokurornsk.germes.app.transform.impl.SimpleDTOTransformer;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 /**
  * {@link CityResource} is REST web-service that handles city-related requests
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 @Path("cities")
 public class CityResource extends BaseResource {
@@ -35,10 +36,11 @@ public class CityResource extends BaseResource {
      */
     private final Transformer transformer;
 
-    public CityResource() {
-        transformer = new SimpleDTOTransformer();
+    @Inject
+    public CityResource(GeographicService service, Transformer transformer) {
+        this.transformer = transformer;
+        this.service = service;
 
-        service = new GeographicServiceImpl();
         City city = new City("Odessa");
         city.addStation(TransportType.AUTO);
         service.saveCity(city);

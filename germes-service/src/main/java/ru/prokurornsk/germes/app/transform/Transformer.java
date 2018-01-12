@@ -6,7 +6,7 @@ import ru.prokurornsk.germes.app.rest.dto.base.BaseDTO;
 /**
  * Represents transformation engine to convert business entities
  * into DTO objects
- * @author Morenets
+ * @author ProkurorNSK
  *
  */
 public interface Transformer {

@@ -4,7 +4,7 @@ import ru.prokurornsk.germes.app.infra.exception.base.AppException;
 
 /**
  * Signals about incorrect configuration settings/parameters
- * @author Morenets
+ * @author ProkurorNSK
  *
  */
 public class ConfigurationException extends AppException {

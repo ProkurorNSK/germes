@@ -12,7 +12,7 @@ import static ru.prokurornsk.germes.app.infra.util.CommonUtil.getSafeSet;
 /**
  * Any locality that contains transport stations.
  *
- * @author admin
+ * @author ProkurorNSK
  */
 public class City extends AbstractEntity {
 

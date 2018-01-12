@@ -11,7 +11,7 @@ import java.util.List;
  * In-memory implementation of the {@link CityRepository} that stores
  * data in the RAM
  *
- * @author Morenets
+ * @author ProkurorNSK
  */
 public class InMemoryCityRepository implements CityRepository {
 

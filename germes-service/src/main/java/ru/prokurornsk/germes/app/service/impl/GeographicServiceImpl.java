@@ -8,23 +8,23 @@ import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
 import ru.prokurornsk.germes.app.persistence.repository.inmemory.InMemoryCityRepository;
 import ru.prokurornsk.germes.app.service.GeographicService;
 
+import javax.inject.Inject;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static ru.prokurornsk.germes.app.infra.util.CommonUtil.getSafeList;
 
 /**
  * Default implementation of the {@link GeographicService}
  *
- * @author prokuror
+ * @author ProkurorNSK
  */
 
 public class GeographicServiceImpl implements GeographicService {
 
     private final CityRepository cityRepository;
 
-    public GeographicServiceImpl() {
-        cityRepository = new InMemoryCityRepository();
+    @Inject
+    public GeographicServiceImpl(CityRepository cityRepository) {
+        this.cityRepository = cityRepository;
     }
 
     @Override
