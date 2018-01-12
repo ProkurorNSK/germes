@@ -5,6 +5,7 @@ import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
 import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
 import ru.prokurornsk.germes.app.model.search.criteria.StationCriteria;
 
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
@@ -13,6 +14,8 @@ import java.util.Objects;
  *
  * @author ProkurorNSK
  */
+@Table(name = "STATION")
+@Entity
 public class Station extends AbstractEntity {
     private City city;
 
@@ -57,14 +60,17 @@ public class Station extends AbstractEntity {
         return true;
     }
 
-    public void setCity(final City city) {
-        this.city = city;
-    }
-
+    @ManyToOne(cascade = {}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "CITY_ID")
     public City getCity() {
         return city;
     }
 
+    public void setCity(final City city) {
+        this.city = city;
+    }
+
+    @Embedded
     public Address getAddress() {
         return address;
     }
@@ -73,6 +79,7 @@ public class Station extends AbstractEntity {
         this.address = address;
     }
 
+    @Column(name = "PHONE", length = 16)
     public String getPhone() {
         return phone;
     }
@@ -81,6 +88,7 @@ public class Station extends AbstractEntity {
         this.phone = phone;
     }
 
+    @Embedded
     public Coordinate getCoordinate() {
         return coordinate;
     }
@@ -89,6 +97,8 @@ public class Station extends AbstractEntity {
         this.coordinate = coordinate;
     }
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, name = "TRANSPORT_TYPE")
     public TransportType getTransportType() {
         return transportType;
     }

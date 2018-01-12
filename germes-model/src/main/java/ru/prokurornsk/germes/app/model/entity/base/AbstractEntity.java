@@ -12,6 +12,7 @@ package ru.prokurornsk.germes.app.model.entity.base;
 
 import ru.prokurornsk.germes.app.model.entity.person.Account;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
@@ -20,6 +21,7 @@ import java.time.LocalDateTime;
  * @author ProkurorNSK
  * @version 1.0
  */
+@MappedSuperclass
 public class AbstractEntity {
     /**
      * Unique entity identifier.
@@ -46,6 +48,9 @@ public class AbstractEntity {
      */
     private Account modifiedBy;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
@@ -54,6 +59,7 @@ public class AbstractEntity {
         this.id = id;
     }
 
+    @Column(name = "CREATED_AT", nullable = false, updatable = false)
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -62,6 +68,7 @@ public class AbstractEntity {
         this.createdAt = createdAt;
     }
 
+    @Column(name = "MODIFIED_AT", insertable = false)
     public LocalDateTime getModifiedAt() {
         return modifiedAt;
     }
@@ -70,6 +77,8 @@ public class AbstractEntity {
         this.modifiedAt = modifiedAt;
     }
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = {})
+    @JoinColumn(name = "CREATED_BY", updatable = false)
     public Account getCreatedBy() {
         return createdBy;
     }
@@ -78,6 +87,8 @@ public class AbstractEntity {
         this.createdBy = createdBy;
     }
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = {})
+    @JoinColumn(name = "MODIFIED_BY", insertable = false)
     public Account getModifiedBy() {
         return modifiedBy;
     }
