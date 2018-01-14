@@ -14,11 +14,12 @@ import static ru.prokurornsk.germes.app.infra.util.CommonUtil.getSafeSet;
  * Any locality that contains transport stations
  *
  * @author ProkurorNSK
- *
  */
 @Table(name = "CITY")
 @Entity
 public class City extends AbstractEntity {
+    public static final String FIELD_NAME = "name";
+
     private String name;
 
     /**

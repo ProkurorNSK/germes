@@ -17,6 +17,10 @@ import java.util.Objects;
 @Table(name = "STATION")
 @Entity
 public class Station extends AbstractEntity {
+    public static final String FIELD_TRANSPORT_TYPE = "transportType";
+
+    public static final String FIELD_CITY = "city";
+
     private City city;
 
     private Address address;
@@ -30,9 +34,13 @@ public class Station extends AbstractEntity {
 
     private TransportType transportType;
 
+    public Station() {
+    }
+
     /**
      * You shouldn't create station object directly. Use
      * {@link City} functionality instead
+     *
      * @param city
      * @param transportType
      */
@@ -64,7 +72,7 @@ public class Station extends AbstractEntity {
         this.address = address;
     }
 
-    @Column(name = "PHONE", length=16)
+    @Column(name = "PHONE", length = 16)
     public String getPhone() {
         return phone;
     }
@@ -83,27 +91,28 @@ public class Station extends AbstractEntity {
     }
 
     @Enumerated
-    @Column(nullable=false, name="TRANSPORT_TYPE")
+    @Column(nullable = false, name = "TRANSPORT_TYPE")
     public TransportType getTransportType() {
         return transportType;
     }
 
     /**
      * Verifies if current station matches specified criteria
+     *
      * @param criteria
      * @return
      */
     public boolean match(final StationCriteria criteria) {
         Objects.requireNonNull(criteria, "Station criteria is not initialized");
 
-        if(!StringUtils.isEmpty(criteria.getName())) {
-            if(!city.getName().equals(criteria.getName())) {
+        if (!StringUtils.isEmpty(criteria.getName())) {
+            if (!city.getName().equals(criteria.getName())) {
                 return false;
             }
         }
 
-        if(criteria.getTransportType() != null) {
-            if(transportType != criteria.getTransportType()) {
+        if (criteria.getTransportType() != null) {
+            if (transportType != criteria.getTransportType()) {
                 return false;
             }
         }
