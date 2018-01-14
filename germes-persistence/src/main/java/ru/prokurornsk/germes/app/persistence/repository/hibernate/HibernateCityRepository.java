@@ -2,7 +2,6 @@ package ru.prokurornsk.germes.app.persistence.repository.hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.persistence.hibernate.SessionFactoryBuilder;
 import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
