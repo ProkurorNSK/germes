@@ -23,7 +23,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * {@link Export} dynamically generates SQL schema
  *
- * @author admin
+ * @author ProkurorNSK
  *
  */
 public class Export {

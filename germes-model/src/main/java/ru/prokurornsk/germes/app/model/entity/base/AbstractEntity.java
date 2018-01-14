@@ -22,29 +22,29 @@ import java.time.LocalDateTime;
  * @version 1.0
  */
 @MappedSuperclass
-public class AbstractEntity {
+public abstract class AbstractEntity {
     /**
-     * Unique entity identifier.
+     * Unique entity identifier
      */
     private int id;
 
     /**
-     * Timestamp of entity creation.
+     * Timestamp of entity creation
      */
     private LocalDateTime createdAt;
 
     /**
-     * Timestamp of entity last modification.
+     * Timestamp of entity last modification
      */
     private LocalDateTime modifiedAt;
 
     /**
-     * Person who created specific entity.
+     * Person who created specific entity
      */
     private Account createdBy;
 
     /**
-     * Last person who modified entity.
+     * Last person who modified entity
      */
     private Account modifiedBy;
 
@@ -55,7 +55,7 @@ public class AbstractEntity {
         return id;
     }
 
-    public void setId(final int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -64,7 +64,7 @@ public class AbstractEntity {
         return createdAt;
     }
 
-    public void setCreatedAt(final LocalDateTime createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -73,7 +73,7 @@ public class AbstractEntity {
         return modifiedAt;
     }
 
-    public void setModifiedAt(final LocalDateTime modifiedAt) {
+    public void setModifiedAt(LocalDateTime modifiedAt) {
         this.modifiedAt = modifiedAt;
     }
 
@@ -83,7 +83,7 @@ public class AbstractEntity {
         return createdBy;
     }
 
-    public void setCreatedBy(final Account createdBy) {
+    public void setCreatedBy(Account createdBy) {
         this.createdBy = createdBy;
     }
 
@@ -93,20 +93,15 @@ public class AbstractEntity {
         return modifiedBy;
     }
 
-    public void setModifiedBy(final Account modifiedBy) {
+    public void setModifiedBy(Account modifiedBy) {
         this.modifiedBy = modifiedBy;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null || getClass() != obj.getClass())
-            return false;
-
-        AbstractEntity that = (AbstractEntity) obj;
-
-        return id == that.id;
+    @PrePersist
+    public void prePersist() {
+        if (getId() == 0) {
+            setCreatedAt(LocalDateTime.now());
+        }
     }
 
     @Override
@@ -115,5 +110,19 @@ public class AbstractEntity {
         int result = 1;
         result = prime * result + id;
         return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        AbstractEntity other = (AbstractEntity) obj;
+        if (id != other.id)
+            return false;
+        return true;
     }
 }

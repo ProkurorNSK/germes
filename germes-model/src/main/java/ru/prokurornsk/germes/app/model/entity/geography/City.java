@@ -11,30 +11,29 @@ import java.util.Set;
 import static ru.prokurornsk.germes.app.infra.util.CommonUtil.getSafeSet;
 
 /**
- * Any locality that contains transport stations.
+ * Any locality that contains transport stations
  *
  * @author ProkurorNSK
+ *
  */
 @Table(name = "CITY")
 @Entity
 public class City extends AbstractEntity {
-
     private String name;
 
     /**
-     * Name of the district where city is placed.
+     * Name of the district where city is placed
      */
     private String district;
 
     /**
-     * Name of the region where district is located.
-     * Region is top-level area in the country.
+     * Name of the region where district is located. Region is top-level area in
+     * the country
      */
     private String region;
 
     /**
-     * Set of transport stations that is linked to this
-     * loyality.
+     * Set of transport stations that is linked to this locality
      */
     private Set<Station> stations;
 
@@ -50,7 +49,7 @@ public class City extends AbstractEntity {
         return name;
     }
 
-    public void setName(final String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -59,16 +58,16 @@ public class City extends AbstractEntity {
         return district;
     }
 
-    public void setDistrict(final String district) {
+    public void setDistrict(String district) {
         this.district = district;
     }
 
-    @Column(name = "REGION", nullable = false, length = 32, unique = true)
+    @Column(name = "REGION", nullable = false, length = 32)
     public String getRegion() {
         return region;
     }
 
-    public void setRegion(final String region) {
+    public void setRegion(String region) {
         this.region = region;
     }
 
@@ -77,8 +76,12 @@ public class City extends AbstractEntity {
         return getSafeSet(stations);
     }
 
+    public void setStations(Set<Station> stations) {
+        this.stations = stations;
+    }
+
     /**
-     * Adds specified station to the city station list.
+     * Adds specified station to the city station list
      *
      * @param transportType
      */
@@ -88,6 +91,7 @@ public class City extends AbstractEntity {
         }
         Station station = new Station(this, transportType);
         stations.add(station);
+
         return station;
     }
 
@@ -98,6 +102,9 @@ public class City extends AbstractEntity {
      */
     public void removeStation(Station station) {
         Objects.requireNonNull(station, "station parameter is not initialized");
+        if (stations == null) {
+            return;
+        }
         stations.remove(station);
     }
 }

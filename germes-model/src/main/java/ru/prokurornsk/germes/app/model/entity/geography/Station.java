@@ -22,7 +22,7 @@ public class Station extends AbstractEntity {
     private Address address;
 
     /**
-     * (Optional) Phone of the inquiry office.
+     * (Optional) Phone of the inquiry office
      */
     private String phone;
 
@@ -30,11 +30,9 @@ public class Station extends AbstractEntity {
 
     private TransportType transportType;
 
-
     /**
      * You shouldn't create station object directly. Use
      * {@link City} functionality instead
-     *
      * @param city
      * @param transportType
      */
@@ -43,31 +41,18 @@ public class Station extends AbstractEntity {
         this.transportType = Objects.requireNonNull(transportType);
     }
 
-    public boolean match(final StationCriteria criteria) {
-        Objects.requireNonNull(criteria, "Station criteria is not initialized");
-        if (!StringUtils.isEmpty(criteria.getName())) {
-            if (!city.getName().equals(criteria.getName())) {
-                return false;
-            }
-        }
-
-        if (criteria.getTransportType() != null) {
-            if (transportType != criteria.getTransportType()) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     @ManyToOne(cascade = {}, fetch = FetchType.EAGER)
     @JoinColumn(name = "CITY_ID")
     public City getCity() {
         return city;
     }
 
-    public void setCity(final City city) {
+    public void setCity(City city) {
         this.city = city;
+    }
+
+    public void setTransportType(TransportType transportType) {
+        this.transportType = transportType;
     }
 
     @Embedded
@@ -75,16 +60,16 @@ public class Station extends AbstractEntity {
         return address;
     }
 
-    public void setAddress(final Address address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
-    @Column(name = "PHONE", length = 16)
+    @Column(name = "PHONE", length=16)
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(final String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -93,14 +78,37 @@ public class Station extends AbstractEntity {
         return coordinate;
     }
 
-    public void setCoordinate(final Coordinate coordinate) {
+    public void setCoordinate(Coordinate coordinate) {
         this.coordinate = coordinate;
     }
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, name = "TRANSPORT_TYPE")
+    @Enumerated
+    @Column(nullable=false, name="TRANSPORT_TYPE")
     public TransportType getTransportType() {
         return transportType;
+    }
+
+    /**
+     * Verifies if current station matches specified criteria
+     * @param criteria
+     * @return
+     */
+    public boolean match(final StationCriteria criteria) {
+        Objects.requireNonNull(criteria, "Station criteria is not initialized");
+
+        if(!StringUtils.isEmpty(criteria.getName())) {
+            if(!city.getName().equals(criteria.getName())) {
+                return false;
+            }
+        }
+
+        if(criteria.getTransportType() != null) {
+            if(transportType != criteria.getTransportType()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override

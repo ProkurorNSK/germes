@@ -39,10 +39,12 @@ public class CityResource extends BaseResource {
     @Inject
     public CityResource(GeographicService service, Transformer transformer) {
         this.transformer = transformer;
-        this.service = service;
 
+        this.service = service;
         City city = new City("Odessa");
         city.addStation(TransportType.AUTO);
+        city.setDistrict("Odessa");
+        city.setRegion("Odessa");
         service.saveCity(city);
     }
 
@@ -75,7 +77,7 @@ public class CityResource extends BaseResource {
      * @return
      */
     public Response findCityById(@PathParam("cityId") final String cityId) {
-        if (!NumberUtils.isCreatable(cityId)) {
+        if(!NumberUtils.isCreatable(cityId)) {
             return BAD_REQUEST;
         }
 

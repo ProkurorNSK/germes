@@ -9,4 +9,5 @@ dependencies {
   testRuntime 'org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:' + jerseyVersion
   testCompile 'org.powermock:powermock-module-junit4:' + powerMockVersion
   testCompile 'org.powermock:powermock-api-mockito:' + powerMockVersion
+  testCompile 'com.h2database:h2:1.4.196'
 }
