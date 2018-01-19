@@ -4,18 +4,16 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
+import org.reflections.Reflections;
 import ru.prokurornsk.germes.app.infra.exception.PersistenceException;
-import ru.prokurornsk.germes.app.model.entity.geography.Address;
-import ru.prokurornsk.germes.app.model.entity.geography.City;
-import ru.prokurornsk.germes.app.model.entity.geography.Coordinate;
-import ru.prokurornsk.germes.app.model.entity.geography.Station;
-import ru.prokurornsk.germes.app.model.entity.person.Account;
 import ru.prokurornsk.germes.app.persistence.hibernate.interceptor.TimestampInterceptor;
 
 import javax.annotation.PreDestroy;
+import javax.persistence.Entity;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.Set;
 
 /**
  * Component that is responsible for managing
@@ -33,11 +31,9 @@ public class SessionFactoryBuilder {
 
         MetadataSources sources = new MetadataSources(registry);
 
-        sources.addAnnotatedClass(City.class);
-        sources.addAnnotatedClass(Station.class);
-        sources.addAnnotatedClass(Coordinate.class);
-        sources.addAnnotatedClass(Address.class);
-        sources.addAnnotatedClass(Account.class);
+        Reflections reflections = new Reflections("ru.prokurornsk.germes.app.model.entity");
+        Set<Class<?>> entityClasses = reflections.getTypesAnnotatedWith(Entity.class);
+        entityClasses.forEach(sources::addAnnotatedClass);
 
         org.hibernate.boot.SessionFactoryBuilder builder = sources.getMetadataBuilder().build().getSessionFactoryBuilder().applyInterceptor(new TimestampInterceptor());
         sessionFactory = builder.build()    ;
