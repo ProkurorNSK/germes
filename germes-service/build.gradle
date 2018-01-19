@@ -9,5 +9,8 @@ dependencies {
   testRuntime 'org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:' + jerseyVersion
   testCompile 'org.powermock:powermock-module-junit4:' + powerMockVersion
   testCompile 'org.powermock:powermock-api-mockito:' + powerMockVersion
-  testCompile 'com.h2database:h2:1.4.196'
+  testRuntime 'com.h2database:h2:1.4.196'
+  testRuntime 'org.hsqldb:hsqldb:2.4.0'
+  testRuntime 'org.apache.derby:derby:10.14.1.0'
+  testRuntime 'org.xerial:sqlite-jdbc:3.21.0.1'
 }
