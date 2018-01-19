@@ -12,7 +12,6 @@ import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
 import ru.prokurornsk.germes.app.persistence.repository.StationRepository;
 import ru.prokurornsk.germes.app.persistence.repository.hibernate.HibernateCityRepository;
 import ru.prokurornsk.germes.app.persistence.repository.hibernate.HibernateStationRepository;
-import ru.prokurornsk.germes.app.persistence.repository.inmemory.InMemoryCityRepository;
 import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
 
 import java.util.List;
