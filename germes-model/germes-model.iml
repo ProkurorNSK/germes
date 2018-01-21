@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="ru.prokurornsk" externalSystemModuleVersion="0.4.2" linkedProjectId=":germes-model" linkedProjectPath="$MODULE_DIR$" rootProjectPath="$MODULE_DIR$/.." />
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="ru.prokurornsk" externalSystemModuleVersion="0.4.3" linkedProjectId=":germes-model" linkedProjectPath="$MODULE_DIR$" rootProjectPath="$MODULE_DIR$/.." />
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/${project.build.directory}/classes" />
