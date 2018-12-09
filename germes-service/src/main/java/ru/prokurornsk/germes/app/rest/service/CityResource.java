@@ -10,7 +10,6 @@ import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
 import ru.prokurornsk.germes.app.transform.Transformer;
 import ru.prokurornsk.germes.app.transform.impl.SimpleDTOTransformer;
 
-import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -36,15 +35,12 @@ public class CityResource extends BaseResource {
      */
     private final Transformer transformer;
 
-    @Inject
-    public CityResource(GeographicService service, Transformer transformer) {
-        this.transformer = transformer;
+    public CityResource() {
+        transformer = new SimpleDTOTransformer();
 
-        this.service = service;
+        service = new GeographicServiceImpl();
         City city = new City("Odessa");
         city.addStation(TransportType.AUTO);
-        city.setDistrict("Odessa");
-        city.setRegion("Odessa");
         service.saveCity(city);
     }
 
@@ -77,14 +73,15 @@ public class CityResource extends BaseResource {
      * @return
      */
     public Response findCityById(@PathParam("cityId") final String cityId) {
-        if(!NumberUtils.isCreatable(cityId)) {
+        if(!NumberUtils.isNumber(cityId)) {
             return BAD_REQUEST;
         }
 
-        Optional<City> city = service.findCityById(NumberUtils.toInt(cityId));
+        Optional<City> city = service.findCitiyById(NumberUtils.toInt(cityId));
         if (!city.isPresent()) {
             return NOT_FOUND;
         }
         return ok(transformer.transform(city.get(), CityDTO.class));
     }
+
 }

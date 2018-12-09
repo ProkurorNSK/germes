@@ -30,7 +30,7 @@ public interface GeographicService {
      * @param id
      * @return
      */
-    Optional<City> findCityById(int id);
+    Optional<City> findCitiyById(int id);
 
     /**
      * Returns all the stations that match specified criteria
@@ -47,11 +47,5 @@ public interface GeographicService {
      */
     void saveCity(City city);
 
-    /**
-     * Delete city with specified identifier
-     *
-     * @param cityId
-     */
-    void delete(int cityId);
 }
 
