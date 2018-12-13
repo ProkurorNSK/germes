@@ -7,6 +7,7 @@ import ru.prokurornsk.germes.app.model.entity.geography.Station;
 import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
 import ru.prokurornsk.germes.app.model.search.criteria.StationCriteria;
 import ru.prokurornsk.germes.app.model.search.criteria.range.RangeCriteria;
+import ru.prokurornsk.germes.app.persistence.repository.inmemory.InMemoryCityRepository;
 import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class GeographicServiceImplTest {
 
     @Before
     public void setup() {
-        service = new GeographicServiceImpl();
+        service = new GeographicServiceImpl(new InMemoryCityRepository());
     }
 
     @Test

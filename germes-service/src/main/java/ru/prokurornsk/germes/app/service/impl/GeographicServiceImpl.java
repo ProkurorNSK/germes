@@ -8,6 +8,7 @@ import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
 import ru.prokurornsk.germes.app.persistence.repository.inmemory.InMemoryCityRepository;
 import ru.prokurornsk.germes.app.service.GeographicService;
 
+import javax.inject.Inject;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -20,8 +21,9 @@ import java.util.stream.Collectors;
 public class GeographicServiceImpl implements GeographicService {
     private final CityRepository cityRepository;
 
-    public GeographicServiceImpl() {
-        cityRepository = new InMemoryCityRepository();
+    @Inject
+    public GeographicServiceImpl(CityRepository cityRepository) {
+        this.cityRepository = cityRepository;
     }
 
     @Override
