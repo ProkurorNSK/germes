@@ -39,10 +39,10 @@ public class CityResource extends BaseResource {
         this.transformer = transformer;
         this.service = service;
 
-        City city = new City("Odessa");
+        City city = new City("Moscow");
         city.addStation(TransportType.AUTO);
-        city.setDistrict("Odessa");
-        city.setRegion("Odessa");
+        city.setDistrict("Moscow");
+        city.setRegion("Moscow");
         service.saveCity(city);
     }
 

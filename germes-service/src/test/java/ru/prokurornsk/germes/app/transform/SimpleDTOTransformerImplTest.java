@@ -25,10 +25,10 @@ public class SimpleDTOTransformerImplTest {
 
     @Test
     public void testTransformCitySuccess() {
-        City city = new City("Odessa");
+        City city = new City("Moscow");
         city.setId(1);
-        city.setRegion("Od");
-        city.setDistrict("None");
+        city.setRegion("Ms");
+        city.setDistrict("Msc");
 
         CityDTO dto = transformer.transform(city, CityDTO.class);
         assertNotNull(dto);
@@ -45,16 +45,16 @@ public class SimpleDTOTransformerImplTest {
 
     @Test(expected = InvalidParameterException.class)
     public void testTransformNullDTOClassFailure() {
-        transformer.transform(new City("Odessa"), null);
+        transformer.transform(new City("Moscow"), null);
     }
 
     @Test
     public void testUnTransformCitySuccess() {
         CityDTO dto = new CityDTO();
         dto.setId(1);
-        dto.setRegion("Od");
-        dto.setDistrict("None");
-        dto.setName("Odessa");
+        dto.setRegion("Moscow");
+        dto.setDistrict("Ms");
+        dto.setName("Msc");
 
         City city = transformer.untransform(dto, City.class);
         assertNotNull(city);

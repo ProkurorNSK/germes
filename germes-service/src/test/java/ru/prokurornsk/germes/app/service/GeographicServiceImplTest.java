@@ -50,7 +50,7 @@ public class GeographicServiceImplTest {
 
         List<City> cities = service.findCities();
         assertEquals(cities.size(), 5);
-        assertEquals(cities.get(0).getName(), "Odessa");
+        assertEquals(cities.get(0).getName(), "Moscow");
     }
 
     @Test
@@ -76,7 +76,7 @@ public class GeographicServiceImplTest {
         city.addStation(TransportType.RAILWAY);
         service.saveCity(city);
 
-        List<Station> stations = service.searchStations(StationCriteria.byName("Odessa"), new RangeCriteria(1, 5));
+        List<Station> stations = service.searchStations(StationCriteria.byName("Moscow"), new RangeCriteria(1, 5));
         assertNotNull(stations);
         assertEquals(stations.size(), 2);
         assertEquals(stations.get(0).getCity(), city);
@@ -94,9 +94,9 @@ public class GeographicServiceImplTest {
         City city = createCity();
         city.addStation(TransportType.AUTO);
         service.saveCity(city);
-        City city2 = new City("Kiev");
-        city2.setDistrict("Kiev");
-        city2.setRegion("Kiev");
+        City city2 = new City("Spb");
+        city2.setDistrict("Spb");
+        city2.setRegion("Spb");
         city2.addStation(TransportType.AUTO);
         service.saveCity(city2);
 
@@ -110,7 +110,7 @@ public class GeographicServiceImplTest {
         City city = createCity();
         city.addStation(TransportType.AUTO);
         service.saveCity(city);
-        City city2 = new City("Kiev");
+        City city2 = new City("Spb");
         city2.setId(2);
         city2.addStation(TransportType.RAILWAY);
         service.saveCity(city2);
@@ -122,9 +122,9 @@ public class GeographicServiceImplTest {
 
 
     private City createCity() {
-        City city = new City("Odessa");
-        city.setDistrict("Odessa");
-        city.setRegion("Odessa");
+        City city = new City("Moscow");
+        city.setDistrict("Moscow");
+        city.setRegion("Moscow");
 
         return city;
     }

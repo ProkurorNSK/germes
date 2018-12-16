@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 public class StationTest {
     @Test(expected = NullPointerException.class)
     public void testMatchCriteriaNotInitialized() {
-        City city = new City("Odessa");
+        City city = new City("Moscow");
         Station station = new Station(city, TransportType.AUTO);
 
         station.match(null);
@@ -23,17 +23,17 @@ public class StationTest {
 
     @Test
     public void testMatchByNameSuccess() {
-        City city = new City("Odessa");
+        City city = new City("Moscow");
         Station station = new Station(city, TransportType.AUTO);
 
-        assertTrue(station.match(StationCriteria.byName("Odessa")));
+        assertTrue(station.match(StationCriteria.byName("Moscow")));
     }
 
     @Test
     public void testMatchByNameNotFound() {
-        City city = new City("Odessa");
+        City city = new City("Moscow");
         Station station = new Station(city, TransportType.AUTO);
 
-        assertFalse(station.match(StationCriteria.byName("Kiev")));
+        assertFalse(station.match(StationCriteria.byName("Spb")));
     }
 }
