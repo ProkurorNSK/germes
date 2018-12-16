@@ -1,4 +1,5 @@
 dependencies {
     compile project(':germes-model')
     testCompile 'org.hibernate:hibernate-tools:5.4.0.CR2'
+    compile 'org.glassfish.hk2.external:javax.inject:2.5.0-b62'
 }
