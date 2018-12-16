@@ -9,6 +9,7 @@ import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.model.entity.geography.Coordinate;
 import ru.prokurornsk.germes.app.model.entity.geography.Station;
 import ru.prokurornsk.germes.app.model.entity.person.Account;
+import ru.prokurornsk.germes.app.persistence.hibernate.interceptor.TimestampInterceptor;
 
 import javax.annotation.PreDestroy;
 import javax.persistence.PersistenceException;
@@ -34,7 +35,9 @@ public class SessionFactoryBuilder {
         sources.addAnnotatedClass(Coordinate.class);
         sources.addAnnotatedClass(Address.class);
         sources.addAnnotatedClass(Account.class);
-        sessionFactory = sources.buildMetadata().buildSessionFactory();
+
+        org.hibernate.boot.SessionFactoryBuilder builder = sources.getMetadataBuilder().build().getSessionFactoryBuilder().applyInterceptor(new TimestampInterceptor());
+        sessionFactory = builder.build();
     }
 
     private Properties loadProperties() {
