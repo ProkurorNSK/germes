@@ -31,7 +31,7 @@ public class CityResourceTest extends JerseyTest {
     public void testFindCitiesSuccess() {
         List<Map<String, String>> cities = target("cities").request().get(List.class);
         assertNotNull(cities);
-        assertFalse(cities.isEmpty());
+        assertEquals(cities.size(), 1);
 
         Map<String, String> city = cities.get(0);
         assertEquals(city.get("name"), "Odessa");

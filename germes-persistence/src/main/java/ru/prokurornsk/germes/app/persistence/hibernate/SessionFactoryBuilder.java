@@ -11,6 +11,10 @@ import ru.prokurornsk.germes.app.model.entity.geography.Station;
 import ru.prokurornsk.germes.app.model.entity.person.Account;
 
 import javax.annotation.PreDestroy;
+import javax.persistence.PersistenceException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * Component that is responsible for managing
@@ -22,7 +26,8 @@ public class SessionFactoryBuilder {
     private final SessionFactory sessionFactory;
 
     public SessionFactoryBuilder() {
-        ServiceRegistry registry = new StandardServiceRegistryBuilder().build();
+
+        ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(loadProperties()).build();
         MetadataSources sources = new MetadataSources(registry);
         sources.addAnnotatedClass(City.class);
         sources.addAnnotatedClass(Station.class);
@@ -30,6 +35,19 @@ public class SessionFactoryBuilder {
         sources.addAnnotatedClass(Address.class);
         sources.addAnnotatedClass(Account.class);
         sessionFactory = sources.buildMetadata().buildSessionFactory();
+    }
+
+    private Properties loadProperties() {
+        try {
+            InputStream in = SessionFactoryBuilder.class.getClassLoader().getResourceAsStream("application.properties");
+            Properties properties = new Properties();
+
+            properties.load(in);
+
+            return properties;
+        } catch (IOException e) {
+            throw new PersistenceException(e);
+        }
     }
 
     /**

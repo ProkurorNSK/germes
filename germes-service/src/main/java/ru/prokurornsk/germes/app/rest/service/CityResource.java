@@ -6,9 +6,7 @@ import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
 import ru.prokurornsk.germes.app.rest.dto.CityDTO;
 import ru.prokurornsk.germes.app.rest.service.base.BaseResource;
 import ru.prokurornsk.germes.app.service.GeographicService;
-import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
 import ru.prokurornsk.germes.app.transform.Transformer;
-import ru.prokurornsk.germes.app.transform.impl.SimpleDTOTransformer;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -43,6 +41,8 @@ public class CityResource extends BaseResource {
 
         City city = new City("Odessa");
         city.addStation(TransportType.AUTO);
+        city.setDistrict("Odessa");
+        city.setRegion("Odessa");
         service.saveCity(city);
     }
 
