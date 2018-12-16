@@ -90,7 +90,7 @@ public class Station extends AbstractEntity {
         this.coordinate = coordinate;
     }
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, name = "TRANSPORT_TYPE")
     public TransportType getTransportType() {
         return transportType;
