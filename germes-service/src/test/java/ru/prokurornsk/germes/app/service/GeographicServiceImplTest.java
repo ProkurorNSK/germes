@@ -1,7 +1,6 @@
 package ru.prokurornsk.germes.app.service;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.model.entity.geography.Station;
 import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
@@ -16,6 +15,8 @@ import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static org.junit.Assert.*;
 
@@ -27,15 +28,25 @@ import static org.junit.Assert.*;
 public class GeographicServiceImplTest {
     private static final int DEFAULT_CITY_ID = 1;
 
-    private GeographicService service;
+    private static GeographicService service;
 
-    @Before
-    public void setup() {
+    private static ExecutorService executorService;
+
+    @BeforeClass
+    public static void setup() {
         SessionFactoryBuilder builder = new SessionFactoryBuilder();
         CityRepository repository = new HibernateCityRepository(builder);
         StationRepository stationRepository = new HibernateStationRepository(builder);
         service = new GeographicServiceImpl(repository, stationRepository);
+
+        executorService = Executors.newCachedThreadPool();
     }
+
+    @AfterClass
+    public static void tearDown() {
+        executorService.shutdownNow();
+    }
+
 
     @Test
     public void testNoDataReturnedAtStart() {
@@ -45,12 +56,15 @@ public class GeographicServiceImplTest {
 
     @Test
     public void testSaveNewCitySuccess() {
+
+        int cityCount = service.findCities().size();
+
         City city = createCity();
         service.saveCity(city);
 
         List<City> cities = service.findCities();
-//        assertEquals(cities.size(), 5);
-        assertEquals(cities.get(0).getName(), "Moscow");
+        assertEquals(cities.size(), cityCount + 1);
+        assertEquals(cities.get(cityCount).getName(), "Moscow");
     }
 
     @Test
@@ -71,6 +85,9 @@ public class GeographicServiceImplTest {
 
     @Test
     public void testSearchStationsByNameSuccess() {
+
+        int cityCount = service.searchStations(StationCriteria.byName("Moscow"), new RangeCriteria(1, 5)).size();
+
         City city = createCity();
         city.addStation(TransportType.AUTO);
         city.addStation(TransportType.RAILWAY);
@@ -78,8 +95,8 @@ public class GeographicServiceImplTest {
 
         List<Station> stations = service.searchStations(StationCriteria.byName("Moscow"), new RangeCriteria(1, 5));
         assertNotNull(stations);
-        //assertEquals(stations.size(), 2);
-        //assertEquals(stations.get(0).getCity(), city);
+        assertEquals(stations.size(), cityCount + 2);
+        assertEquals(stations.get(cityCount).getCity(), city);
     }
 
     @Test
@@ -91,6 +108,8 @@ public class GeographicServiceImplTest {
 
     @Test
     public void testSearchStationsByTransportTypeSuccess() {
+        int stationsCount = service.searchStations(new StationCriteria(TransportType.AUTO), new RangeCriteria(1, 5)).size();
+
         City city = createCity();
         city.addStation(TransportType.AUTO);
         service.saveCity(city);
@@ -102,7 +121,7 @@ public class GeographicServiceImplTest {
 
         List<Station> stations = service.searchStations(new StationCriteria(TransportType.AUTO), new RangeCriteria(1, 5));
         assertNotNull(stations);
-//        assertEquals(stations.size(), 3);
+        assertEquals(stations.size(), stationsCount + 2);
     }
 
     @Test
@@ -128,4 +147,24 @@ public class GeographicServiceImplTest {
 
         return city;
     }
+
+    @Test
+    @Ignore
+    public void testSaveMultipleCitiesSuccess() {
+        int cityCount = service.findCities().size();
+        int addedCount = 100;
+        for (int i = 0; i < addedCount; i++) {
+            City city = new City("Kiev" + i);
+            city.setDistrict("Kiev");
+            city.setRegion("Kiev");
+            city.addStation(TransportType.AUTO);
+            service.saveCity(city);
+        }
+
+        List<City> cities = service.findCities();
+        assertEquals(cities.size(), cityCount + addedCount);
+    }
+
+
+
 }
