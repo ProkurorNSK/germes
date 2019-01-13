@@ -9,8 +9,6 @@ import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
 import ru.prokurornsk.germes.app.rest.dto.base.BaseDTO;
 import ru.prokurornsk.germes.app.transform.Transformer;
 
-import javax.inject.Inject;
-
 /**
  * Default transformation engine that uses reflection to transform objects
  *

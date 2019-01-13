@@ -132,6 +132,8 @@ public class GeographicServiceImplTest {
         city.addStation(TransportType.AUTO);
         service.saveCity(city);
         City city2 = new City("Spb");
+        city2.setDistrict("Spb");
+        city2.setRegion("Spb");
         city2.setId(2);
         city2.addStation(TransportType.RAILWAY);
         service.saveCity(city2);
@@ -151,7 +153,6 @@ public class GeographicServiceImplTest {
     }
 
     @Test
-    @Ignore
     public void testSaveMultipleCitiesSuccess() {
         int cityCount = service.findCities().size();
         int addedCount = 100;
@@ -178,7 +179,6 @@ public class GeographicServiceImplTest {
     }
 
     @Test
-    @Ignore
     public void testSaveMultipleCitiesConcurrentlySuccess() {
         int cityCount = service.findCities().size();
 

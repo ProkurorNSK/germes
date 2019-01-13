@@ -2,6 +2,9 @@ package ru.prokurornsk.germes.app.persistence.repository.hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.persistence.hibernate.SessionFactoryBuilder;
 import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
@@ -9,7 +12,15 @@ import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
 import javax.inject.Inject;
 import java.util.List;
 
+/**
+ * Hibernate implementation of {@link CityRepository}
+ *
+ * @author ProkurorNSK
+ *
+ */
 public class HibernateCityRepository  implements CityRepository {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(HibernateCityRepository.class);
     private final SessionFactory sessionFactory;
 
     @Inject
@@ -19,8 +30,17 @@ public class HibernateCityRepository  implements CityRepository {
 
     @Override
     public void save(City city) {
+        Transaction tx = null;
+
         try (Session session = sessionFactory.openSession()) {
+            tx = session.beginTransaction();
             session.saveOrUpdate(city);
+            tx.commit();
+        } catch (Exception ex) {
+            LOGGER.error(ex.getMessage(), ex);
+            if (tx != null) {
+                tx.rollback();
+            }
         }
     }
 
