@@ -58,6 +58,8 @@ public class City extends AbstractEntity {
         this.name = name;
     }
 
+    @NotNull
+    @Size(min = 2, max = 32)
     @Column(name = "DISTRICT", nullable = false, length = 32)
     public String getDistrict() {
         return district;
@@ -67,6 +69,8 @@ public class City extends AbstractEntity {
         this.district = district;
     }
 
+    @NotNull
+    @Size(min = 2, max = 32)
     @Column(name = "REGION", nullable = false, length = 32)
     public String getRegion() {
         return region;

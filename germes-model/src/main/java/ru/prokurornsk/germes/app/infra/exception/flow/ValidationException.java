@@ -17,6 +17,6 @@ public class ValidationException extends FlowException {
 
 
     public <T> ValidationException(String message, Set<ConstraintViolation<T>> constraints) {
-        super(message + ":" + constraints.stream().map(ConstraintViolation::getMessage).collect(Collectors.joining(",")));
+        super(message + ":" + constraints.stream().map(constraint -> constraint.getPropertyPath() + ":" + constraint.getMessage()).collect(Collectors.joining(",")));
     }
 }
