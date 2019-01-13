@@ -1,5 +1,6 @@
 package ru.prokurornsk.germes.app.service.impl;
 
+import ru.prokurornsk.germes.app.infra.exception.flow.ValidationException;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.model.entity.geography.Station;
 import ru.prokurornsk.germes.app.model.search.criteria.StationCriteria;
@@ -9,6 +10,7 @@ import ru.prokurornsk.germes.app.persistence.repository.StationRepository;
 import ru.prokurornsk.germes.app.service.GeographicService;
 
 import javax.inject.Inject;
+import javax.validation.*;
 import java.util.*;
 
 /**
@@ -20,11 +22,15 @@ import java.util.*;
 public class GeographicServiceImpl implements GeographicService {
     private final CityRepository cityRepository;
     private final StationRepository stationRepository;
+    private final Validator validator;
 
     @Inject
     public GeographicServiceImpl(CityRepository cityRepository, StationRepository stationRepository) {
         this.cityRepository = cityRepository;
         this.stationRepository = stationRepository;
+
+        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+        validator = validatorFactory.getValidator();
     }
 
     @Override
@@ -34,6 +40,10 @@ public class GeographicServiceImpl implements GeographicService {
 
     @Override
     public void saveCity(City city) {
+        Set<ConstraintViolation<City>> constraintViolations = validator.validate(city);
+        if (!constraintViolations.isEmpty()) {
+            throw new ValidationException("City validation failure", constraintViolations);
+        }
         cityRepository.save(city);
     }
 

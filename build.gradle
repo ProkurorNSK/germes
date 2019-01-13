@@ -1,7 +1,7 @@
 allprojects {
     apply plugin: 'maven'
     group = 'ru.prokurornsk'
-    version = '0.4.2'
+    version = '0.4.3'
 }
 subprojects {
     ext {
@@ -25,12 +25,12 @@ subprojects {
         mavenCentral()
     }
     dependencies {
-        compile 'com.google.guava:guava:' + guavaVersion
-        compile 'org.apache.commons:commons-lang3:' + commonsLangVersion
-        compile 'org.apache.logging.log4j:log4j-slf4j-impl:' + log4jVersion
-        compile 'org.apache.logging.log4j:log4j-api:' + log4jVersion
-        compile 'org.apache.logging.log4j:log4j-core:' + log4jVersion
-        compile 'org.slf4j:slf4j-api:' + slf4jVersion
-        testCompile 'junit:junit:' + junitVersion
+        compile "com.google.guava:guava:$guavaVersion"
+        compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+        compile "org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion"
+        compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
+        compile "org.apache.logging.log4j:log4j-core:$log4jVersion"
+        compile "org.slf4j:slf4j-api:$slf4jVersion"
+        testCompile "junit:junit:$junitVersion"
     }
 }

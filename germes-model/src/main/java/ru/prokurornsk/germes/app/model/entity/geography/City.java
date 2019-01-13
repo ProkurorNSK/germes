@@ -4,6 +4,8 @@ import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
 import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -45,6 +47,8 @@ public class City extends AbstractEntity {
         this.name = name;
     }
 
+    @NotNull
+    @Size(min = 2, max = 32)
     @Column(name = "NAME", nullable = false, length = 32)
     public String getName() {
         return name;
