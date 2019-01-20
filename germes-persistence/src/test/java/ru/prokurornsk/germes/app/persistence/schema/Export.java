@@ -3,7 +3,7 @@ package ru.prokurornsk.germes.app.persistence.schema;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.dialect.Dialect;
-import org.hibernate.dialect.MySQL5Dialect;
+import org.hibernate.dialect.MariaDB102Dialect;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.hibernate.tool.schema.TargetType;
 import org.reflections.Reflections;
@@ -41,6 +41,6 @@ public class Export {
     }
 
     public static void main(String[] args) {
-        exportDatabase("", MySQL5Dialect.class);
+        exportDatabase("", MariaDB102Dialect.class);
     }
 }

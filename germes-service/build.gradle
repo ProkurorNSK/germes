@@ -10,5 +10,5 @@ dependencies {
     testCompile 'org.powermock:powermock-module-junit4:' + powerMockVersion
     testCompile 'org.powermock:powermock-api-mockito:' + powerMockVersion
     runtime 'com.h2database:h2:1.4.197'
-    runtime 'org.xerial:sqlite-jdbc:3.25.2'
+    runtime 'org.mariadb.jdbc:mariadb-java-client:2.3.0'
 }

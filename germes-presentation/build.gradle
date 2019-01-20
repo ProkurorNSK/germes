@@ -6,8 +6,8 @@ dependencies {
 }
 
 gretty {
-    httpPort = 80
+    httpPort = 8080
     contextPath = '/'
-    servletContainer = 'jetty9'
+    servletContainer = 'tomcat8'
     httpEnabled = true
 }
