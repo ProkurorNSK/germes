@@ -58,4 +58,9 @@ public class InMemoryCityRepository implements CityRepository {
     public List<City> findAll() {
         return getSafeList(cities);
     }
+
+    @Override
+    public void deleteAll() {
+        cities.clear();
+    }
 }

@@ -29,20 +29,36 @@ public class CityResourceTest extends JerseyTest {
 
     @Test
     public void testFindCitiesSuccess() {
-        List<Map<String, String>> cities = target("cities").request().get(List.class);
-        assertNotNull(cities);
-        assertNotEquals(cities.size(), 0);
 
-        Map<String, String> city = cities.get(0);
-        assertEquals(city.get("name"), "Moscow");
+        CityDTO cityDTO = new CityDTO();
+        cityDTO.setName("Novosibirsk");
+        cityDTO.setDistrict("Novosibirsk");
+        cityDTO.setRegion("Novosibirsk");
+        target("cities").request().post(Entity.entity(cityDTO, MediaType.APPLICATION_JSON));
+
+        List cities = target("cities").request().get(List.class);
+        assertNotNull(cities);
+        assertFalse(cities.isEmpty());
+
+        Map city = (Map) cities.get(cities.size() - 1);
+        assertEquals(city.get("name"), "Novosibirsk");
     }
 
     @Test
     public void testFindCityByIdSuccess() {
-        CityDTO city = target("cities/1").request().get(CityDTO.class);
+        CityDTO cityDTO = new CityDTO();
+        cityDTO.setName("Novosibirsk");
+        cityDTO.setDistrict("Novosibirsk");
+        cityDTO.setRegion("Novosibirsk");
+        target("cities").request().post(Entity.entity(cityDTO, MediaType.APPLICATION_JSON));
+
+        List cities = target("cities").request().get(List.class);
+
+        Integer id = (Integer)((Map)cities.get(cities.size() - 1)).get("id");
+        CityDTO city = target("cities/" + id.toString()).request().get(CityDTO.class);
         assertNotNull(city);
-        assertEquals(city.getId(), 1);
-        assertEquals(city.getName(), "Moscow");
+        assertEquals(city.getId(), id.intValue());
+        assertEquals(city.getName(), "Novosibirsk");
     }
 
     @Test

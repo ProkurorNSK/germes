@@ -48,6 +48,7 @@ public class GeographicServiceImplTest {
     @AfterClass
     public static void tearDown() {
         executorService.shutdownNow();
+        service.deleteCities();
     }
 
 
@@ -75,15 +76,15 @@ public class GeographicServiceImplTest {
         City city = createCity();
         service.saveCity(city);
 
-        Optional<City> foundCity = service.findCitiyById(DEFAULT_CITY_ID);
+        Optional<City> foundCity = service.findCitiyById(city.getId());
         assertTrue(foundCity.isPresent());
-        assertEquals(foundCity.get().getId(), DEFAULT_CITY_ID);
+        assertEquals(foundCity.get().getId(), city.getId());
     }
 
     @Test
     public void testFindCityByIdNotFound() {
         Optional<City> foundCity = service.findCitiyById(DEFAULT_CITY_ID);
-        assertFalse(!foundCity.isPresent());
+        assertFalse(foundCity.isPresent());
     }
 
     @Test
@@ -135,7 +136,6 @@ public class GeographicServiceImplTest {
         City city2 = new City("Spb");
         city2.setDistrict("Spb");
         city2.setRegion("Spb");
-        city2.setId(2);
         city2.addStation(TransportType.RAILWAY);
         service.saveCity(city2);
 

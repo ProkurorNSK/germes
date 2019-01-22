@@ -3,6 +3,7 @@ package ru.prokurornsk.germes.app.persistence.repository.hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
@@ -65,6 +66,29 @@ public class HibernateCityRepository  implements CityRepository {
     public List<City> findAll() {
         try (Session session = sessionFactory.openSession()) {
             return session.createCriteria(City.class).list();
+        }
+    }
+
+    @Override
+    public void deleteAll() {
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = null;
+            try {
+                tx = session.beginTransaction();
+                Query stationQuery = session.createQuery("delete from Station");
+                stationQuery.executeUpdate();
+
+                Query query = session.createQuery("delete from City");
+                int deleted = query.executeUpdate();
+                LOGGER.debug("Deleted {} cities", deleted);
+
+                tx.commit();
+            } catch (Exception ex) {
+                LOGGER.error(ex.getMessage(), ex);
+                if (tx != null) {
+                    tx.rollback();
+                }
+            }
         }
     }
 }

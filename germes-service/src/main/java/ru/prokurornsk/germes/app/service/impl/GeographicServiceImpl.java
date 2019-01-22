@@ -48,6 +48,11 @@ public class GeographicServiceImpl implements GeographicService {
     }
 
     @Override
+    public void deleteCities() {
+        cityRepository.deleteAll();
+    }
+
+    @Override
     public Optional<City> findCitiyById(final int id) {
         return Optional.ofNullable(cityRepository.findById(id));
     }
