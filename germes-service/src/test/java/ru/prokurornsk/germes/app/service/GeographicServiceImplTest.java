@@ -156,17 +156,38 @@ public class GeographicServiceImplTest {
     @Test
     public void testSaveMultipleCitiesSuccess() {
         int cityCount = service.findCities().size();
-        int addedCount = 100;
+
+        int addedCount = 1_000;
         for (int i = 0; i < addedCount; i++) {
-            City city = new City("Kiev" + i);
-            city.setDistrict("Kiev");
-            city.setRegion("Kiev");
+            City city = new City("Odessa" + i);
+            city.setDistrict("Odessa");
+            city.setRegion("Odessa");
             city.addStation(TransportType.AUTO);
             service.saveCity(city);
         }
 
         List<City> cities = service.findCities();
         assertEquals(cities.size(), cityCount + addedCount);
+    }
+
+    @Test
+    public void testSaveMultipleCitiesInBatchSuccess() {
+        int cityCount = service.findCities().size();
+        int addedCount = 5_000;
+
+        List<City> cities = new ArrayList<>(addedCount);
+
+        for (int i = 0; i < addedCount; i++) {
+            City city = new City("Odessa" + i);
+            city.setDistrict("Odessa");
+            city.setRegion("Odessa");
+            city.addStation(TransportType.AUTO);
+            cities.add(city);
+        }
+        service.saveCities(cities);
+
+        List<City> allCities = service.findCities();
+        assertEquals(allCities.size(), cityCount + addedCount);
     }
 
     private void waitForFutures(List<Future<?>> futures) {
@@ -184,7 +205,7 @@ public class GeographicServiceImplTest {
         int cityCount = service.findCities().size();
 
         int threadCount = 20;
-        int batchCount = 10;
+        int batchCount = 5;
 
         List<Future<?>> futures = new ArrayList<>();
 
@@ -217,7 +238,7 @@ public class GeographicServiceImplTest {
 
         int cityCount = service.findCities().size();
 
-        int threadCount = 200;
+        int threadCount = 20;
 
         List<Future<?>> futures = new ArrayList<>();
 

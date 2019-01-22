@@ -53,6 +53,11 @@ public class GeographicServiceImpl implements GeographicService {
     }
 
     @Override
+    public void saveCities(List<City> cities) {
+        cityRepository.saveAll(cities);
+    }
+
+    @Override
     public Optional<City> findCitiyById(final int id) {
         return Optional.ofNullable(cityRepository.findById(id));
     }
