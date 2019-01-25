@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="ru.prokurornsk.germes-model.main" target="1.8" />
+      <module name="ru.prokurornsk.germes-model.test" target="1.8" />
+      <module name="ru.prokurornsk.germes-persistence.main" target="1.8" />
+      <module name="ru.prokurornsk.germes-persistence.test" target="1.8" />
+      <module name="ru.prokurornsk.germes-presentation.main" target="1.8" />
+      <module name="ru.prokurornsk.germes-presentation.test" target="1.8" />
+      <module name="ru.prokurornsk.germes-service.main" target="1.8" />
+      <module name="ru.prokurornsk.germes-service.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
