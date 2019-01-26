@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/germes.iml" filepath="$PROJECT_DIR$/.idea/germes.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.prokurornsk.germes.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.prokurornsk.germes.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes-model.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes-model.main.iml" />
