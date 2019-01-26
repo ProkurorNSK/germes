@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "angular": "1.7.6",
-    "angular-resource": "^1.7.6"
+    "angular-resource": "^1.7.6",
+    "angular-mocks": "^1.7.6"
   }
 }
