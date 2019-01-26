@@ -1,5 +1,9 @@
+plugins {
+    id "com.craigburke.karma" version "1.4.4"
+}
+
+apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'
 apply plugin: 'war'
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 
 dependencies {
     compile project(':germes-service')
@@ -10,4 +14,26 @@ gretty {
     contextPath = '/'
     servletContainer = 'tomcat8'
     httpEnabled = true
+}
+
+karma {
+    basePath = '../src/main/webapp'
+    colors = true
+    logLevel = 'INFO'
+    profile 'default'
+
+    browsers = ['Chrome']
+    frameworks = ['jasmine']
+    reporters = ['progress']
+    profile('default')  {
+        libraryBases = ['bower_components/']
+        libraryFiles = ['angular/angular.js', 'angular-mocks/angular-mocks.js', 'angular-resource/angular-resource.js',
+                        'angular-translate/angular-translate.js']
+
+        sourceBases = ['js/']
+        sourceFiles = ['*.js']
+
+        testBases = ['test/unit/']
+        testFiles = ['*.js']
+    }
 }
