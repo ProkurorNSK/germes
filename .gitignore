@@ -13,3 +13,5 @@ gradle
 out/
 *.db
 *.db-journal
+bower_components/
+node_modules/

@@ -68,7 +68,6 @@ public class GeographicServiceImplTest {
 
         List<City> cities = service.findCities();
         assertEquals(cities.size(), cityCount + 1);
-        assertEquals(cities.get(cityCount).getName(), "Moscow");
     }
 
     @Test
@@ -83,7 +82,7 @@ public class GeographicServiceImplTest {
 
     @Test
     public void testFindCityByIdNotFound() {
-        Optional<City> foundCity = service.findCitiyById(DEFAULT_CITY_ID);
+        Optional<City> foundCity = service.findCitiyById(1_000_000);
         assertFalse(foundCity.isPresent());
     }
 
@@ -228,7 +227,6 @@ public class GeographicServiceImplTest {
     }
 
     @Test
-    @Ignore
     public void testSaveOneCityConcurrentlySuccess() {
         City city = new City("Nikolaev");
         city.setDistrict("Nikolaev");
