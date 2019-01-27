@@ -1,8 +1,11 @@
 package ru.prokurornsk.germes.app.rest.service;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.apache.commons.lang3.math.NumberUtils;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
-import ru.prokurornsk.germes.app.model.entity.transport.TransportType;
 import ru.prokurornsk.germes.app.rest.dto.CityDTO;
 import ru.prokurornsk.germes.app.rest.service.base.BaseResource;
 import ru.prokurornsk.germes.app.service.GeographicService;
@@ -22,6 +25,7 @@ import java.util.stream.Collectors;
  * @author ProkurorNSK
  */
 @Path("cities")
+@Api(value="cities", description = "City-related operations")
 public class CityResource extends BaseResource {
 
     /**
@@ -48,6 +52,7 @@ public class CityResource extends BaseResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "Returns all the existing cities")
     /**
      * Returns all the existing cities
      * @return
@@ -70,6 +75,9 @@ public class CityResource extends BaseResource {
     @Path("/{cityId}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "Returns existing city by its identifier")
+    @ApiResponses(value = { @ApiResponse(code = 400, message = "Invalid city identifier"),
+            @ApiResponse(code = 404, message = "Identifier of the non-existing city") })
     /**
      * Returns city with specified identifier
      * @return
