@@ -5,7 +5,6 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../germes-persistence/src/test">
       <sourceFolder url="file://$MODULE_DIR$/../../../germes-persistence/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../germes-persistence/src/test/resources" type="java-test-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -65,8 +64,8 @@
     <orderEntry type="library" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.7" level="project" />
     <orderEntry type="library" name="Gradle: org.jvnet.staxex:stax-ex:1.8" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.osgi:3.13.200" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.core.jobs:3.10.200" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.core.contenttype:3.7.200" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.equinox.app:1.4.0" level="project" />

@@ -3,10 +3,7 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../../germes-presentation/out/production/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../germes-presentation/src/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../../germes-presentation/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../germes-presentation/src/main/resources" type="java-resource" />
-    </content>
+    <content url="file://$MODULE_DIR$/../../../germes-presentation/src/main" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ru.prokurornsk.germes-service.main" />
