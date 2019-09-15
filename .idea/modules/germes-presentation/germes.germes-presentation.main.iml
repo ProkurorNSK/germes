@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id=":germes-presentation:main" external.linked.project.path="$MODULE_DIR$/../../../germes-presentation" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.7.4" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../../germes-presentation/out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../../germes-presentation/build/classes/java/main" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../germes-presentation/src/main" />
+    <content url="file://$MODULE_DIR$/../../../germes-presentation/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../germes-presentation/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../germes-presentation/src/main/resources" type="java-resource" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="ru.prokurornsk.germes-service.main" />
-    <orderEntry type="module" module-name="ru.prokurornsk.germes-persistence.main" />
-    <orderEntry type="module" module-name="ru.prokurornsk.germes-model.main" />
+    <orderEntry type="module" module-name="germes.germes-service.main" />
+    <orderEntry type="module" module-name="germes.germes-persistence.main" />
+    <orderEntry type="module" module-name="germes.germes-model.main" />
     <orderEntry type="library" name="Gradle: io.swagger:swagger-jersey2-jaxrs:1.5.21" level="project" />
     <orderEntry type="library" name="Gradle: io.swagger:swagger-jaxrs:1.5.21" level="project" />
     <orderEntry type="library" name="Gradle: org.reflections:reflections:0.9.11" level="project" />
