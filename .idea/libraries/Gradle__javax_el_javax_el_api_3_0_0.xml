@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: javax.el:javax.el-api:3.0.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/javax/el/javax.el-api/3.0.0/javax.el-api-3.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
  *
  * @author ProkurorNSK
  */
+@SuppressWarnings("deprecation")
 @Path("cities")
 @Api(value="cities", description = "City-related operations")
 public class CityResource extends BaseResource {

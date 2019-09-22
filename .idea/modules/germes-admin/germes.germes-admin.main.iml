@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":germes-admin:main" external.linked.project.path="$MODULE_DIR$/../../../germes-admin" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.7.6" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":germes-admin:main" external.linked.project.path="$MODULE_DIR$/../../../germes-admin" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.7.8" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../../germes-admin/build/classes/java/main" />
     <exclude-output />
@@ -17,13 +17,18 @@
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.primefaces:primefaces:6.0" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish:javax.faces:2.2.14" level="project" />
+    <orderEntry type="library" name="Gradle: org.jboss.weld.servlet:weld-servlet:2.4.1.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:failureaccess:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: javax.enterprise:cdi-api:1.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.checkerframework:checker-qual:2.5.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.errorprone:error_prone_annotations:2.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.j2objc:j2objc-annotations:1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.codehaus.mojo:animal-sniffer-annotations:1.17" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: javax.el:javax.el-api:3.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: javax.interceptor:javax.interceptor-api:1.2" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: javax.inject:javax.inject:1" level="project" />
   </component>
 </module>
