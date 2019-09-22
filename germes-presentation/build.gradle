@@ -2,7 +2,7 @@ plugins {
     id "com.craigburke.karma" version "1.4.4"
 }
 
-apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'
+apply plugin: 'org.akhikhl.gretty'
 apply plugin: 'war'
 
 dependencies {
@@ -10,10 +10,8 @@ dependencies {
 }
 
 gretty {
-    httpPort = 8080
-    contextPath = '/'
+    contextPath = ''
     servletContainer = 'tomcat8'
-    httpEnabled = true
 }
 
 karma {
