@@ -10,6 +10,8 @@
       <module name="germes.germes-persistence.test" target="1.8" />
       <module name="germes.germes-presentation.main" target="1.8" />
       <module name="germes.germes-presentation.test" target="1.8" />
+      <module name="germes.germes-rest.main" target="1.8" />
+      <module name="germes.germes-rest.test" target="1.8" />
       <module name="germes.germes-service.main" target="1.8" />
       <module name="germes.germes-service.test" target="1.8" />
       <module name="ru.prokurornsk.germes-model.main" target="1.8" />

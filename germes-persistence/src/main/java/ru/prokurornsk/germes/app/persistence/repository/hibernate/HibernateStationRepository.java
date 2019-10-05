@@ -12,8 +12,10 @@ import ru.prokurornsk.germes.app.persistence.hibernate.SessionFactoryBuilder;
 import ru.prokurornsk.germes.app.persistence.repository.StationRepository;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
+@Named
 public class HibernateStationRepository implements StationRepository {
 
     private final SessionFactory sessionFactory;

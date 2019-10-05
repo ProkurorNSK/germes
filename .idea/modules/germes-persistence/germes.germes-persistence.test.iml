@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":germes-persistence:test" external.linked.project.path="$MODULE_DIR$/../../../germes-persistence" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.7.8" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":germes-persistence:test" external.linked.project.path="$MODULE_DIR$/../../../germes-persistence" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.7.9" type="JAVA_MODULE" version="4">
+  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/../../.." rootProjectPath="$MODULE_DIR$/../../.." />
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output-test url="file://$MODULE_DIR$/../../../germes-persistence/build/classes/java/test" />
     <exclude-output />
@@ -65,8 +66,8 @@
     <orderEntry type="library" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.7" level="project" />
     <orderEntry type="library" name="Gradle: org.jvnet.staxex:stax-ex:1.8" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
-    <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.osgi:3.15.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.osgi:3.15.0" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.core.jobs:3.10.500" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.core.contenttype:3.7.400" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.equinox.app:1.4.300" level="project" />

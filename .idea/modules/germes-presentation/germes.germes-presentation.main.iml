@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":germes-presentation:main" external.linked.project.path="$MODULE_DIR$/../../../germes-presentation" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.7.8" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":germes-presentation:main" external.linked.project.path="$MODULE_DIR$/../../../germes-presentation" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.7.9" type="JAVA_MODULE" version="4">
+  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/../../.." rootProjectPath="$MODULE_DIR$/../../.." />
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../../germes-presentation/build/classes/java/main" />
     <exclude-output />
@@ -9,6 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="germes.germes-rest.main" />
     <orderEntry type="module" module-name="germes.germes-service.main" />
     <orderEntry type="module" module-name="germes.germes-persistence.main" />
     <orderEntry type="module" module-name="germes.germes-model.main" />
@@ -46,8 +48,6 @@
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.core:jersey-client:2.25.1" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.media:jersey-media-jaxb:2.25.1" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.core:jersey-common:2.25.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-locator:2.5.0-b32" level="project" />
-    <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:javax.inject:2.5.0-b62" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.ext:jersey-entity-filtering:2.25" level="project" />
     <orderEntry type="library" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.4" level="project" />
@@ -58,6 +58,7 @@
     <orderEntry type="library" name="Gradle: org.hibernate.common:hibernate-commons-annotations:5.1.0.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
     <orderEntry type="library" name="Gradle: javax.persistence:javax.persistence-api:2.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-locator:2.5.0-b32" level="project" />
     <orderEntry type="library" name="Gradle: org.javassist:javassist:3.24.0-GA" level="project" />
     <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.9.5" level="project" />
     <orderEntry type="library" name="Gradle: antlr:antlr:2.7.7" level="project" />
@@ -69,6 +70,7 @@
     <orderEntry type="library" name="Gradle: javax.activation:javax.activation-api:1.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.dom4j:dom4j:2.1.1" level="project" />
     <orderEntry type="library" name="Gradle: javax.validation:validation-api:1.1.0.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:javax.inject:2.5.0-b62" level="project" />
     <orderEntry type="library" name="Gradle: javax.annotation:javax.annotation-api:1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.25.1" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-api:2.5.0-b32" level="project" />

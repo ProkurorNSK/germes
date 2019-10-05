@@ -10,6 +10,7 @@ import ru.prokurornsk.germes.app.persistence.repository.StationRepository;
 import ru.prokurornsk.germes.app.service.GeographicService;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.validation.*;
 import java.util.*;
 
@@ -18,7 +19,7 @@ import java.util.*;
  *
  * @author ProkurorNSK
  */
-
+@Named
 public class GeographicServiceImpl implements GeographicService {
     private final CityRepository cityRepository;
     private final StationRepository stationRepository;

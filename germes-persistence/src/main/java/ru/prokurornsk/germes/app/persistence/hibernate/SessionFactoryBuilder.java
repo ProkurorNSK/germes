@@ -8,6 +8,7 @@ import org.reflections.Reflections;
 import ru.prokurornsk.germes.app.persistence.hibernate.interceptor.TimestampInterceptor;
 
 import javax.annotation.PreDestroy;
+import javax.inject.Named;
 import javax.persistence.Entity;
 import javax.persistence.PersistenceException;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import java.util.Set;
  * @author ProkurorNSK
  *
  */
+@Named
 public class SessionFactoryBuilder {
     private final SessionFactory sessionFactory;
 

@@ -12,6 +12,7 @@ import ru.prokurornsk.germes.app.persistence.hibernate.SessionFactoryBuilder;
 import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ import java.util.List;
  * @author ProkurorNSK
  *
  */
+@Named
 public class HibernateCityRepository  implements CityRepository {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HibernateCityRepository.class);

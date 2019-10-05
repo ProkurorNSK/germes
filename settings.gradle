@@ -1,2 +1,3 @@
 rootProject.name = 'germes'
-include ':germes-presentation',':germes-model',':germes-persistence',':germes-service',':germes-admin'
+include ':germes-presentation',':germes-model',':germes-persistence',':germes-service',':germes-admin','germes-rest'
+
