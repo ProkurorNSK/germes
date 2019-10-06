@@ -1,5 +1,6 @@
 package ru.prokurornsk.germes.app.service.impl;
 
+import ru.prokurornsk.germes.app.infra.cdi.DBSource;
 import ru.prokurornsk.germes.app.infra.exception.flow.ValidationException;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.model.entity.geography.Station;
@@ -26,7 +27,7 @@ public class GeographicServiceImpl implements GeographicService {
     private final Validator validator;
 
     @Inject
-    public GeographicServiceImpl(CityRepository cityRepository, StationRepository stationRepository) {
+    public GeographicServiceImpl(@DBSource CityRepository cityRepository, @DBSource StationRepository stationRepository) {
         this.cityRepository = cityRepository;
         this.stationRepository = stationRepository;
 

@@ -5,6 +5,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import ru.prokurornsk.germes.app.infra.cdi.DBSource;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.model.entity.geography.Station;
 import ru.prokurornsk.germes.app.model.search.criteria.StationCriteria;
@@ -16,6 +17,7 @@ import javax.inject.Named;
 import java.util.List;
 
 @Named
+@DBSource
 public class HibernateStationRepository implements StationRepository {
 
     private final SessionFactory sessionFactory;

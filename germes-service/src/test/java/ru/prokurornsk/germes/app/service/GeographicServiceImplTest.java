@@ -29,7 +29,6 @@ import static org.junit.Assert.*;
  * @author ProkurorNSK
  */
 public class GeographicServiceImplTest {
-    private static final int DEFAULT_CITY_ID = 1;
 
     private static GeographicService service;
 
@@ -55,7 +54,7 @@ public class GeographicServiceImplTest {
     @Test
     public void testNoDataReturnedAtStart() {
         List<City> cities = service.findCities();
-        assertTrue(!cities.isEmpty());
+        assertFalse(cities.isEmpty());
     }
 
     @Test
