@@ -6,6 +6,7 @@
     <content url="file://$MODULE_DIR$/../../../germes-admin">
       <excludeFolder url="file://$MODULE_DIR$/../../../germes-admin/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../germes-admin/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../germes-admin/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

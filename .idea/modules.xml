@@ -2,36 +2,24 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-rest.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-rest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-admin/germes.germes-admin.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-admin/germes.germes-admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-admin/germes.germes-admin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-admin/germes.germes-admin.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-admin/germes.germes-admin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-admin/germes.germes-admin.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-model/germes.germes-model.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-model/germes.germes-model.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-model/germes.germes-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-model/germes.germes-model.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-model/germes.germes-model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-model/germes.germes-model.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-persistence/germes.germes-persistence.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-persistence/germes.germes-persistence.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-persistence/germes.germes-persistence.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-persistence/germes.germes-persistence.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-persistence/germes.germes-persistence.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-persistence/germes.germes-persistence.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-presentation/germes.germes-presentation.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-presentation/germes.germes-presentation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-presentation/germes.germes-presentation.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-presentation/germes.germes-presentation.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-presentation/germes.germes-presentation.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-presentation/germes.germes-presentation.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-rest/germes.germes-rest.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-rest/germes.germes-rest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-rest/germes.germes-rest.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-rest/germes.germes-rest.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-rest/germes.germes-rest.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-rest/germes.germes-rest.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-service/germes.germes-service.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-service/germes.germes-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-service/germes.germes-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-service/germes.germes-service.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-service/germes.germes-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-service/germes.germes-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes.iml" filepath="$PROJECT_DIR$/.idea/modules/germes.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.prokurornsk.germes.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.prokurornsk.germes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-admin/ru.prokurornsk.germes.germes-admin.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-admin/ru.prokurornsk.germes.germes-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-admin/ru.prokurornsk.germes.germes-admin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-admin/ru.prokurornsk.germes.germes-admin.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-admin/ru.prokurornsk.germes.germes-admin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-admin/ru.prokurornsk.germes.germes-admin.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes.germes-model.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes.germes-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes.germes-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes.germes-model.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes.germes-model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-model/ru.prokurornsk.germes.germes-model.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-persistence/ru.prokurornsk.germes.germes-persistence.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-persistence/ru.prokurornsk.germes.germes-persistence.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-persistence/ru.prokurornsk.germes.germes-persistence.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-persistence/ru.prokurornsk.germes.germes-persistence.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-persistence/ru.prokurornsk.germes.germes-persistence.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-persistence/ru.prokurornsk.germes.germes-persistence.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-presentation/ru.prokurornsk.germes.germes-presentation.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-presentation/ru.prokurornsk.germes.germes-presentation.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-presentation/ru.prokurornsk.germes.germes-presentation.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-presentation/ru.prokurornsk.germes.germes-presentation.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-presentation/ru.prokurornsk.germes.germes-presentation.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-presentation/ru.prokurornsk.germes.germes-presentation.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-rest/ru.prokurornsk.germes.germes-rest.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-rest/ru.prokurornsk.germes.germes-rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-rest/ru.prokurornsk.germes.germes-rest.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-rest/ru.prokurornsk.germes.germes-rest.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-rest/ru.prokurornsk.germes.germes-rest.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-rest/ru.prokurornsk.germes.germes-rest.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-service/ru.prokurornsk.germes.germes-service.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-service/ru.prokurornsk.germes.germes-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-service/ru.prokurornsk.germes.germes-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-service/ru.prokurornsk.germes.germes-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/germes-service/ru.prokurornsk.germes.germes-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/germes-service/ru.prokurornsk.germes.germes-service.test.iml" />
     </modules>
