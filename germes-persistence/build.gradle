@@ -4,4 +4,5 @@ dependencies {
     compile 'org.glassfish.hk2.external:javax.inject:2.5.0-b62'
     compile 'org.reflections:reflections:0.9.11'
     compile 'com.zaxxer:HikariCP:3.3.0'
+    compile 'javax.annotation:javax.annotation-api:1.2'
 }
