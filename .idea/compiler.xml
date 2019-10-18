@@ -22,18 +22,18 @@
       <module name="ru.prokurornsk.germes-presentation.test" target="1.8" />
       <module name="ru.prokurornsk.germes-service.main" target="1.8" />
       <module name="ru.prokurornsk.germes-service.test" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-admin.main" target="11" />
-      <module name="ru.prokurornsk.germes.germes-admin.test" target="11" />
-      <module name="ru.prokurornsk.germes.germes-model.main" target="11" />
-      <module name="ru.prokurornsk.germes.germes-model.test" target="11" />
-      <module name="ru.prokurornsk.germes.germes-persistence.main" target="11" />
-      <module name="ru.prokurornsk.germes.germes-persistence.test" target="11" />
-      <module name="ru.prokurornsk.germes.germes-presentation.main" target="11" />
-      <module name="ru.prokurornsk.germes.germes-presentation.test" target="11" />
-      <module name="ru.prokurornsk.germes.germes-rest.main" target="11" />
-      <module name="ru.prokurornsk.germes.germes-rest.test" target="11" />
-      <module name="ru.prokurornsk.germes.germes-service.main" target="11" />
-      <module name="ru.prokurornsk.germes.germes-service.test" target="11" />
+      <module name="ru.prokurornsk.germes.germes-admin.main" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-admin.test" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-model.main" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-model.test" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-persistence.main" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-persistence.test" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-presentation.main" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-presentation.test" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-rest.main" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-rest.test" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-service.main" target="1.8" />
+      <module name="ru.prokurornsk.germes.germes-service.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

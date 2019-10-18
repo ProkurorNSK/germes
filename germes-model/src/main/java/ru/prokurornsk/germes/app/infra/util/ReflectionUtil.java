@@ -43,17 +43,25 @@ public class ReflectionUtil {
      * @param clz2
      * @return
      */
+    /**
+     * Returns list of fields with identical names irregardles of their
+     * modifiers
+     *
+     * @param clz1
+     * @param clz2
+     * @return
+     */
     public static List<String> findSimilarFields(Class<?> clz1, Class<?> clz2) throws ConfigurationException {
         try {
             List<Field> fields = getFields(clz1);
 
             List<String> targetFields = getFields(clz2).stream()
-                    .filter(field -> !field.isAnnotationPresent(Ignore.class)).map(Field::getName)
+                    .filter(field -> !field.isAnnotationPresent(Ignore.class)).map((field) -> field.getName())
                     .collect(Collectors.toList());
             return fields.stream().filter(field -> !field.isAnnotationPresent(Ignore.class))
                     .filter(field -> !Modifier.isStatic(field.getModifiers())
                             && !Modifier.isFinal(field.getModifiers()))
-                    .map(Field::getName).filter(targetFields::contains)
+                    .map((field) -> field.getName()).filter((name) -> targetFields.contains(name))
                     .collect(Collectors.toList());
         } catch (SecurityException ex) {
             throw new ConfigurationException(ex);
@@ -67,7 +75,7 @@ public class ReflectionUtil {
      * @return
      */
     public static <T> List<Field> getFields(Class<?> cls) {
-        List<Field> fields = new ArrayList<>();
+        List<Field> fields = new ArrayList<Field>();
         while (cls != null) {
             fields.addAll(Arrays.asList(cls.getDeclaredFields()));
             cls = cls.getSuperclass();
