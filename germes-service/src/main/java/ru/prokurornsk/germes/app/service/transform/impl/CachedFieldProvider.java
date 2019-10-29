@@ -1,4 +1,4 @@
-package ru.prokurornsk.germes.app.transform.impl;
+package ru.prokurornsk.germes.app.service.transform.impl;
 
 import ru.prokurornsk.germes.app.infra.util.ReflectionUtil;
 

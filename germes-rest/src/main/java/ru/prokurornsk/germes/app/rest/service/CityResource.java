@@ -9,7 +9,7 @@ import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.rest.dto.CityDTO;
 import ru.prokurornsk.germes.app.rest.service.base.BaseResource;
 import ru.prokurornsk.germes.app.service.GeographicService;
-import ru.prokurornsk.germes.app.transform.Transformer;
+import ru.prokurornsk.germes.app.service.transform.Transformer;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;

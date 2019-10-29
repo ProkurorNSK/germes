@@ -1,4 +1,4 @@
-package ru.prokurornsk.germes.app.service;
+package ru.prokurornsk.germes.app.service.impl;
 
 import org.junit.*;
 import ru.prokurornsk.germes.app.infra.exception.flow.ValidationException;
@@ -12,7 +12,7 @@ import ru.prokurornsk.germes.app.persistence.repository.CityRepository;
 import ru.prokurornsk.germes.app.persistence.repository.StationRepository;
 import ru.prokurornsk.germes.app.persistence.repository.hibernate.HibernateCityRepository;
 import ru.prokurornsk.germes.app.persistence.repository.hibernate.HibernateStationRepository;
-import ru.prokurornsk.germes.app.service.impl.GeographicServiceImpl;
+import ru.prokurornsk.germes.app.service.GeographicService;
 
 import java.util.ArrayList;
 import java.util.List;

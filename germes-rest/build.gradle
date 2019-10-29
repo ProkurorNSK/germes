@@ -8,7 +8,5 @@ dependencies {
     testRuntime 'org.glassfish.jersey.containers:jersey-container-grizzly2-http:' + jerseyVersion
     testCompile 'org.glassfish.jersey.test-framework:jersey-test-framework-core:' + jerseyVersion
     testRuntime 'org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:' + jerseyVersion
-    testCompile 'org.powermock:powermock-module-junit4:' + powerMockVersion
-    testCompile 'org.powermock:powermock-api-mockito:' + powerMockVersion
     runtime 'org.mariadb.jdbc:mariadb-java-client:2.3.0'
 }

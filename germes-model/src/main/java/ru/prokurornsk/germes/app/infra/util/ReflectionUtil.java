@@ -56,12 +56,12 @@ public class ReflectionUtil {
             List<Field> fields = getFields(clz1);
 
             List<String> targetFields = getFields(clz2).stream()
-                    .filter(field -> !field.isAnnotationPresent(Ignore.class)).map((field) -> field.getName())
+                    .filter(field -> !field.isAnnotationPresent(Ignore.class)).map(Field::getName)
                     .collect(Collectors.toList());
             return fields.stream().filter(field -> !field.isAnnotationPresent(Ignore.class))
                     .filter(field -> !Modifier.isStatic(field.getModifiers())
                             && !Modifier.isFinal(field.getModifiers()))
-                    .map((field) -> field.getName()).filter((name) -> targetFields.contains(name))
+                    .map(Field::getName).filter(targetFields::contains)
                     .collect(Collectors.toList());
         } catch (SecurityException ex) {
             throw new ConfigurationException(ex);
@@ -75,7 +75,7 @@ public class ReflectionUtil {
      * @return
      */
     public static <T> List<Field> getFields(Class<?> cls) {
-        List<Field> fields = new ArrayList<Field>();
+        List<Field> fields = new ArrayList<>();
         while (cls != null) {
             fields.addAll(Arrays.asList(cls.getDeclaredFields()));
             cls = cls.getSuperclass();

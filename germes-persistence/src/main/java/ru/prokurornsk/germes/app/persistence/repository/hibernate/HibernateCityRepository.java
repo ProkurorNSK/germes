@@ -37,7 +37,6 @@ public class HibernateCityRepository  implements CityRepository {
     @Override
     public void save(City city) {
         Transaction tx = null;
-
         try (Session session = sessionFactory.openSession()) {
             tx = session.beginTransaction();
             session.saveOrUpdate(city);
@@ -59,10 +58,18 @@ public class HibernateCityRepository  implements CityRepository {
 
     @Override
     public void delete(int cityId) {
+        Transaction tx = null;
         try (Session session = sessionFactory.openSession()) {
+            tx = session.beginTransaction();
             City city = session.get(City.class, cityId);
             if (city != null) {
                 session.delete(city);
+            }
+            tx.commit();
+        }catch (Exception ex) {
+            LOGGER.error(ex.getMessage(), ex);
+            if (tx != null) {
+                tx.rollback();
             }
         }
     }
@@ -100,6 +107,7 @@ public class HibernateCityRepository  implements CityRepository {
     @Override
     public void saveAll(List<City> cities) {
         int batchSize = sessionFactory.getSessionFactoryOptions().getJdbcBatchSize();
+
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = null;
             try {
@@ -111,6 +119,7 @@ public class HibernateCityRepository  implements CityRepository {
                         session.clear();
                     }
                 }
+
                 tx.commit();
             } catch (Exception ex) {
                 LOGGER.error(ex.getMessage(), ex);

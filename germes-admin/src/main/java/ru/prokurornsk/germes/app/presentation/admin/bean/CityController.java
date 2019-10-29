@@ -1,7 +1,8 @@
-package ru.prokurornsk.germes.presentation.admin.bean;
+package ru.prokurornsk.germes.app.presentation.admin.bean;
 
 import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.service.GeographicService;
+import ru.prokurornsk.germes.app.service.transform.Transformer;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -21,9 +22,13 @@ public class CityController {
 
     private final GeographicService geographicService;
 
+    private final Transformer transformer;
+
     @Inject
-    public CityController(GeographicService geographicService) {
+    public CityController(GeographicService geographicService,
+                          Transformer transformer) {
         this.geographicService = geographicService;
+        this.transformer = transformer;
     }
 
     public List<City> getCities() {
@@ -31,10 +36,15 @@ public class CityController {
     }
 
     public void saveCity(CityBean cityBean) {
-        City city = new City();
-        city.setName(cityBean.getName());
-        city.setRegion(cityBean.getRegion());
-        city.setDistrict(cityBean.getDistrict());
+        City city = transformer.untransform(cityBean, City.class);
         geographicService.saveCity(city);
+    }
+
+    public void update(City city, CityBean cityBean) {
+        transformer.transform(city, cityBean);
+    }
+
+    public void delete(int cityId) {
+        geographicService.deleteCity(cityId);
     }
 }

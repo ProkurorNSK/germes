@@ -1,6 +1,7 @@
 package ru.prokurornsk.germes.app.rest.dto.base;
 
 import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
+import ru.prokurornsk.germes.app.model.transform.Transformable;
 
 /**
  * Base class for all DTO classes
@@ -8,7 +9,7 @@ import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
  * @author ProkurorNSK
  *
  */
-public abstract class BaseDTO<T extends AbstractEntity> {
+public abstract class BaseDTO<T extends AbstractEntity> implements Transformable<T> {
     /**
      * Unique entity identifier
      */
@@ -16,7 +17,7 @@ public abstract class BaseDTO<T extends AbstractEntity> {
 
     /**
      * Should be overridden in the derived classes if additional transformation
-     * logic domain model to DTO is needed.
+     * logic domain model -> DTO is needed.
      * Overridden methods should call super.transform()
      */
     public void transform(T t) {
@@ -25,7 +26,7 @@ public abstract class BaseDTO<T extends AbstractEntity> {
 
     /**
      * Should be overridden in the derived classes if additional transformation
-     * logic DTO to domain model is needed
+     * logic DTO -> domain model is needed
      */
     public T untransform(T t) {
         t.setId(getId());

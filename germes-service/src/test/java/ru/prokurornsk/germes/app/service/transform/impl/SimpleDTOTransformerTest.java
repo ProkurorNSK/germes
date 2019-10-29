@@ -1,11 +1,12 @@
-package ru.prokurornsk.germes.app.transform;
+package ru.prokurornsk.germes.app.service.transform.impl;
 
 import org.junit.Before;
 import org.junit.Test;
 import ru.prokurornsk.germes.app.infra.exception.flow.InvalidParameterException;
 import ru.prokurornsk.germes.app.model.entity.geography.City;
 import ru.prokurornsk.germes.app.rest.dto.CityDTO;
-import ru.prokurornsk.germes.app.transform.impl.SimpleDTOTransformer;
+import ru.prokurornsk.germes.app.service.transform.Transformer;
+
 
 import static org.junit.Assert.*;
 
@@ -15,7 +16,7 @@ import static org.junit.Assert.*;
  *
  * @author ProkurorNSK
  */
-public class SimpleDTOTransformerImplTest {
+public class SimpleDTOTransformerTest {
     private Transformer transformer;
 
     @Before
@@ -25,10 +26,10 @@ public class SimpleDTOTransformerImplTest {
 
     @Test
     public void testTransformCitySuccess() {
-        City city = new City("Moscow");
+        City city = new City("Odessa");
         city.setId(1);
-        city.setRegion("Ms");
-        city.setDistrict("Msc");
+        city.setRegion("Od");
+        city.setDistrict("None");
 
         CityDTO dto = transformer.transform(city, CityDTO.class);
         assertNotNull(dto);
@@ -38,23 +39,23 @@ public class SimpleDTOTransformerImplTest {
         assertEquals(dto.getRegion(), city.getRegion());
     }
 
-    @Test(expected = InvalidParameterException.class)
+    @Test(expected= InvalidParameterException.class)
     public void testTransformNullCityFailure() {
         transformer.transform(null, CityDTO.class);
     }
 
-    @Test(expected = InvalidParameterException.class)
+    @Test(expected=InvalidParameterException.class)
     public void testTransformNullDTOClassFailure() {
-        transformer.transform(new City("Moscow"), null);
+        transformer.transform(new City("Odessa"), (Class<CityDTO>)null);
     }
 
     @Test
     public void testUnTransformCitySuccess() {
         CityDTO dto = new CityDTO();
         dto.setId(1);
-        dto.setRegion("Moscow");
-        dto.setDistrict("Ms");
-        dto.setName("Msc");
+        dto.setRegion("Od");
+        dto.setDistrict("None");
+        dto.setName("Odessa");
 
         City city = transformer.untransform(dto, City.class);
         assertNotNull(city);
@@ -64,12 +65,12 @@ public class SimpleDTOTransformerImplTest {
         assertEquals(dto.getRegion(), city.getRegion());
     }
 
-    @Test(expected = InvalidParameterException.class)
+    @Test(expected=InvalidParameterException.class)
     public void testUnTransformNullCityFailure() {
         transformer.untransform(null, City.class);
     }
 
-    @Test(expected = InvalidParameterException.class)
+    @Test(expected=InvalidParameterException.class)
     public void testUnTransformNullEntityClassFailure() {
         transformer.untransform(new CityDTO(), null);
     }
