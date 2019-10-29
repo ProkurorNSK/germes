@@ -5,7 +5,7 @@ plugins {
 allprojects {
     apply plugin: 'maven'
     group = 'ru.prokurornsk'
-    version = '0.8.4'
+    version = '0.8.5'
 }
 subprojects {
     ext {
@@ -17,6 +17,7 @@ subprojects {
         jerseyVersion = '2.25'
         powerMockVersion = '1.6.4'
         hibernateVersion = '5.4.0.Final'
+        mockitoVersion = '1.10.19'
     }
     apply plugin: 'java'
     sourceCompatibility = 1.8

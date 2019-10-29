@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jglue.cdi-unit:cdi-unit:3.1.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jglue.cdi-unit/cdi-unit/3.1.4/3070a7eae521d05396969e832531b26385a97e57/cdi-unit-3.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jglue.cdi-unit/cdi-unit/3.1.4/2f5966d4d74eeae3ce010da5a1d4ca9c31e99f96/cdi-unit-3.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
