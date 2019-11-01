@@ -3,6 +3,6 @@ dependencies {
     compile project(':germes-persistence')
     testCompile project(':germes-rest')
     testCompile 'org.powermock:powermock-module-junit4:' + powerMockVersion
-    testCompile 'org.powermock:powermock-api-mockito:' + powerMockVersion
+    testCompile 'org.powermock:powermock-api-mockito2:' + powerMockVersion
     testRuntime 'org.mariadb.jdbc:mariadb-java-client:2.3.0'
 }

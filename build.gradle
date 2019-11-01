@@ -5,17 +5,17 @@ plugins {
 allprojects {
     apply plugin: 'maven'
     group = 'ru.prokurornsk'
-    version = '0.8.8'
+    version = '0.8.9'
 }
 subprojects {
     ext {
-        guavaVersion = '27.0.1-jre'
-        commonsLangVersion = '3.8.1'
+        guavaVersion = '28.1-jre'
+        commonsLangVersion = '3.9'
         junitVersion = '4.12'
-        log4jVersion = '2.11.1'
-        slf4jVersion = '1.7.25'
-        jerseyVersion = '2.25'
-        powerMockVersion = '1.6.4'
+        log4jVersion = '2.12.1'
+        slf4jVersion = '1.7.29'
+        jerseyVersion = '2.29.1'
+        powerMockVersion = '2.0.4'
         hibernateVersion = '5.4.0.Final'
         mockitoVersion = '1.10.19'
     }
