@@ -24,7 +24,7 @@ public class CityBeanTest {
         assertTrue(StringUtils.isEmpty(cityBean.getDistrict()));
         assertTrue(StringUtils.isEmpty(cityBean.getName()));
         assertTrue(StringUtils.isEmpty(cityBean.getRegion()));
-        assertTrue(cityBean.getId() == 0);
+        assertEquals(0, cityBean.getId());
     }
 
     @Test

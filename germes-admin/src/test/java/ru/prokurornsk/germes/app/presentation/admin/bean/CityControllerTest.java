@@ -34,7 +34,7 @@ public class CityControllerTest {
     private Transformer transformer;
 
     @Test
-    public void saveCity_cityInitialzed_citySuccessfullySaved() {
+    public void saveCity_cityInitialized_citySuccessfullySaved() {
         CityBean cityBean = new CityBean();
         cityController.saveCity(cityBean);
         verify(geographicService, atLeastOnce()).saveCity(any(City.class));
