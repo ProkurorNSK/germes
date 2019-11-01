@@ -3,6 +3,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
+<f:view locale="#{language.locale}" contentType="text/html" encoding="UTF-8"/>
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Germes application</title>
@@ -11,6 +12,15 @@
 	<div>
 		<h:outputText value="#{msg['app.name']}"></h:outputText>
 	</div>
+
+	<h:panelGrid columns="3">
+		<p:commandLink value="UA" update="@all"
+					   actionListener="#{language.setLocale('uk_UA')}" />
+		<p:commandLink value="EN" update="@all"
+					   actionListener="#{language.setLocale('en_US')}" />
+		<p:commandLink value="RU" update="@all"
+					   actionListener="#{language.setLocale('ru_RU')}" />
+	</h:panelGrid>
 
 	<ui:include src="/WEB-INF/components/city.xhtml" />
 
