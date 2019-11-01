@@ -12,6 +12,11 @@ dependencies {
     testCompile ('org.jglue.cdi-unit:cdi-unit:3.1.4') { exclude group:'org.jboss.weld.se' }
     testCompile 'org.jboss.weld.se:weld-se-core:2.4.1.Final'
     runtime 'org.mariadb.jdbc:mariadb-java-client:2.3.0'
+    compile 'org.primefaces.themes:bootstrap:1.0.10'
+}
+
+repositories {
+    maven { url "http://repository.primefaces.org" }
 }
 
 gretty {

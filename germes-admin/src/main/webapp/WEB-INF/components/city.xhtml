@@ -5,8 +5,7 @@
 				xmlns:f="http://java.sun.com/jsf/core">
 
 	<h:form id="cityForm">
-		<p:dialog id="cityDialog" header="#{msg['city.details']}" widgetVar="cityDlg"
-				  modal="true" closeOnEscape="true">
+		<p:dialog id="cityDialog" header="#{msg['city.details']}" widgetVar="cityDlg" modal="true" closeOnEscape="true">
 			<h:panelGrid columns="2">
 				<h:outputText value="#{msg['city.name']}" />
 				<p:inputText value="#{currentCity.name}" />
@@ -16,7 +15,7 @@
 				<p:inputText value="#{currentCity.region}" />
 			</h:panelGrid>
 
-			<div style="text-align:right; margin-top:20px">
+			<div class="button">
 				<p:commandButton value="#{msg['button.save']}"   oncomplete="PF('cityDlg').hide();" actionListener="#{cityController.saveCity(currentCity)}" update="citiesTable" />
 				<p:commandButton value="#{msg['button.cancel']}" oncomplete="PF('cityDlg').hide();" />
 			</div>
