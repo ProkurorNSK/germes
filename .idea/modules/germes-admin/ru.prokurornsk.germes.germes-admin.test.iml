@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":germes-admin:test" external.linked.project.path="$MODULE_DIR$/../../../germes-admin" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.9.1" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":germes-admin:test" external.linked.project.path="$MODULE_DIR$/../../../germes-admin" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ru.prokurornsk" external.system.module.type="sourceSet" external.system.module.version="0.9.2" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output-test url="file://$MODULE_DIR$/../../../germes-admin/build/classes/java/test" />
     <exclude-output />
@@ -28,7 +28,7 @@
     <orderEntry type="library" name="Gradle: org.jboss.weld.servlet:weld-servlet-core:3.1.2.Final" level="project" />
     <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
-    <orderEntry type="library" name="Gradle: org.mockito:mockito-all:1.10.19" level="project" />
+    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:2.28.2" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.weld.se:weld-se-core:3.1.2.Final" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:failureaccess:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
@@ -52,13 +52,16 @@
     <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.classfilewriter:jboss-classfilewriter:1.2.4.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.9.10" level="project" />
+    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy-agent:1.9.10" level="project" />
+    <orderEntry type="library" name="Gradle: org.objenesis:objenesis:2.6" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.deltaspike.core:deltaspike-core-impl:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.weld:weld-api:3.1.SP1" level="project" />
     <orderEntry type="library" name="Gradle: javax.enterprise:cdi-api:2.0.SP1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: javax.interceptor:javax.interceptor-api:1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.web:javax.el:2.2.6" level="project" />
     <orderEntry type="library" name="Gradle: javax.el:javax.el-api:3.0.0" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:javax.inject:2.5.0-b36" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: javax.interceptor:javax.interceptor-api:1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.deltaspike.core:deltaspike-core-api:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.javassist:javassist:3.24.0-GA" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.0_spec:1.0.0.Final" level="project" />
@@ -69,7 +72,6 @@
     <orderEntry type="library" name="Gradle: net.jcip:jcip-annotations:1.0" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Gradle: javax.persistence:javax.persistence-api:2.2" level="project" />
-    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.9.5" level="project" />
     <orderEntry type="library" name="Gradle: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss:jandex:2.0.5.Final" level="project" />

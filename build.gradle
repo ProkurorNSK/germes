@@ -5,7 +5,7 @@ plugins {
 allprojects {
     apply plugin: 'maven'
     group = 'ru.prokurornsk'
-    version = '0.9.1'
+    version = '0.9.2'
 }
 subprojects {
     ext {
@@ -17,7 +17,7 @@ subprojects {
         jerseyVersion = '2.25.1'
         powerMockVersion = '2.0.4'
         hibernateVersion = '5.4.0.Final'
-        mockitoVersion = '1.10.19'
+        mockitoVersion = '2.28.2'
         mariaDBclientVersion = '2.5.1'
         h2Version = '1.4.200'
     }
