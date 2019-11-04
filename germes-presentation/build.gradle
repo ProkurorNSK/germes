@@ -1,6 +1,6 @@
-plugins {
+/*plugins {
     id "com.craigburke.karma" version "1.4.4"
-}
+}*/
 
 apply plugin: 'org.akhikhl.gretty'
 apply plugin: 'war'
@@ -14,7 +14,7 @@ gretty {
     servletContainer = 'tomcat8'
 }
 
-karma {
+/*karma {
     basePath = '../src/main/webapp'
     colors = true
     logLevel = 'INFO'
@@ -22,7 +22,7 @@ karma {
 
     browsers = ['Chrome']
     frameworks = ['jasmine']
-    reporters = ['progress']
+    reporters = ['junit']
     profile('default')  {
         libraryBases = ['bower_components/']
         libraryFiles = ['angular/angular.js', 'angular-mocks/angular-mocks.js', 'angular-resource/angular-resource.js',
@@ -34,4 +34,4 @@ karma {
         testBases = ['test/unit/']
         testFiles = ['*.js']
     }
-}
+}*/

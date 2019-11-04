@@ -16,9 +16,9 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.7.6",
-    "angular-resource": "^1.7.6",
-    "angular-mocks": "^1.7.6"
+    "angular": "1.7.8",
+    "angular-resource": "^1.7.8",
+    "angular-mocks": "^1.7.8"
   },
   "devDependencies": {
     "angular-translate": "^2.18.1",
