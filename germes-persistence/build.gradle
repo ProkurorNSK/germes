@@ -1,7 +1,7 @@
 dependencies {
     compile project(':germes-model')
     testCompile 'org.hibernate:hibernate-tools:' + hibernateVersion
-    compile 'org.glassfish.hk2.external:javax.inject:2.5.0-b62'
+    compile 'org.glassfish.hk2.external:javax.inject:2.5.0-b36'
     compile 'org.reflections:reflections:0.9.11'
-    compile 'com.zaxxer:HikariCP:3.3.0'
+    compile 'com.zaxxer:HikariCP:3.4.1'
 }

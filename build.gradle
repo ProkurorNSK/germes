@@ -5,7 +5,7 @@ plugins {
 allprojects {
     apply plugin: 'maven'
     group = 'ru.prokurornsk'
-    version = '0.8.9'
+    version = '0.9.0'
 }
 subprojects {
     ext {
@@ -14,10 +14,11 @@ subprojects {
         junitVersion = '4.12'
         log4jVersion = '2.12.1'
         slf4jVersion = '1.7.29'
-        jerseyVersion = '2.29.1'
+        jerseyVersion = '2.25.1'
         powerMockVersion = '2.0.4'
         hibernateVersion = '5.4.0.Final'
         mockitoVersion = '1.10.19'
+        mariaDBclientVersion = '2.5.1'
     }
     apply plugin: 'java'
     sourceCompatibility = 1.8
@@ -26,7 +27,6 @@ subprojects {
         options.encoding = 'UTF-8'
     }
     repositories {
-        mavenLocal()
         mavenCentral()
     }
     dependencies {

@@ -14,6 +14,7 @@ import ru.prokurornsk.germes.app.persistence.repository.hibernate.HibernateCityR
 import ru.prokurornsk.germes.app.persistence.repository.hibernate.HibernateStationRepository;
 import ru.prokurornsk.germes.app.service.GeographicService;
 
+import javax.validation.ConstraintViolation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -252,6 +253,14 @@ public class GeographicServiceImplTest {
         assertEquals(cities.size(), cityCount);
     }
 
+    private void assertValidation(ValidationException ex, String fieldName, Class<?> clz, String messageKey) {
+        assertFalse(ex.getConstraints().isEmpty());
+        ConstraintViolation<?> constraint = ex.getConstraints().iterator().next();
+        assertTrue(constraint.getMessageTemplate().equals(messageKey));
+        assertTrue(constraint.getPropertyPath().toString().equals(fieldName));
+        assertTrue(constraint.getRootBeanClass().equals(clz));
+    }
+
     @Test
     public void testSaveCityMissingNameValidationExceptionThrown() {
         try {
@@ -262,7 +271,7 @@ public class GeographicServiceImplTest {
 
             fail("City name validation failed");
         } catch (ValidationException ex) {
-            assertTrue(ex.getMessage().contains("name:должно быть задано"));
+            assertValidation(ex, "name", City.class, "{javax.validation.constraints.NotNull.message}");
         }
     }
 
@@ -276,7 +285,7 @@ public class GeographicServiceImplTest {
 
             fail("City name validation failed");
         } catch (ValidationException ex) {
-            assertTrue(ex.getMessage().contains("name:размер должен быть между 2 и 32"));
+            assertValidation(ex, "name", City.class, "{javax.validation.constraints.Size.message}");
         }
     }
 
@@ -290,7 +299,7 @@ public class GeographicServiceImplTest {
 
             fail("City name validation failed");
         } catch (ValidationException ex) {
-            assertTrue(ex.getMessage().contains("name:размер должен быть между 2 и 32"));
+            assertValidation(ex, "name", City.class, "{javax.validation.constraints.Size.message}");
         }
     }
 }
