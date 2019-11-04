@@ -1,8 +1,8 @@
 dependencies {
     compile project(':germes-model')
     compile project(':germes-persistence')
-    testCompile project(':germes-rest')
+    //testCompile project(':germes-rest')
     testCompile 'org.powermock:powermock-module-junit4:' + powerMockVersion
     testCompile 'org.powermock:powermock-api-mockito2:' + powerMockVersion
-    testRuntime 'org.mariadb.jdbc:mariadb-java-client:' + mariaDBclientVersion
+    testRuntime 'com.h2database:h2:' + h2Version
 }
