@@ -2,6 +2,7 @@ package ru.prokurornsk.germes.app.model.entity.person;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
@@ -13,7 +14,9 @@ import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
  */
 @Table(name = "USERS")
 @Entity
+@NamedQuery(name = User.QUERY_FIND_ALL, query = "from User")
 public class User extends AbstractEntity{
+	public static final String QUERY_FIND_ALL = "User.findAll";
 	/**
 	 * Unique user name within the system
 	 */

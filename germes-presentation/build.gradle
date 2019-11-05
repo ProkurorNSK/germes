@@ -14,6 +14,11 @@ gretty {
     servletContainer = 'tomcat8'
 }
 
+war {
+    exclude 'node_modules', 'test', 'dist', 'dest', 'Gruntfile.js', 'gulpfile.js', 'package.json', 'package-lock.json', 'bower.json'
+}
+
+
 /*karma {
     basePath = '../src/main/webapp'
     colors = true

@@ -6,7 +6,6 @@
       <module name="germes.germes-admin.test" target="1.8" />
       <module name="germes.germes-model.main" target="1.8" />
       <module name="germes.germes-model.test" target="1.8" />
-      <module name="germes.germes-persistence.test" target="1.8" />
       <module name="germes.germes-presentation.main" target="1.8" />
       <module name="germes.germes-presentation.test" target="1.8" />
       <module name="germes.germes-rest.main" target="1.8" />
