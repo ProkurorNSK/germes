@@ -37,6 +37,13 @@ public class HibernateUserRepository extends BaseHibernateRepository implements 
 	}
 
 	@Override
+	public Optional<User> findByUserName(String userName) {
+		return query(session -> session.createNamedQuery(User.QUERY_FIND_BY_USERNAME, User.class)
+				.setParameter("userName", userName).uniqueResultOptional());
+
+	}
+
+	@Override
 	public void delete(int userId) {
 		execute(session -> {
 			User user = session.get(User.class, userId);

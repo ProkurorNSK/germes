@@ -1,4 +1,4 @@
-package ru.prokurornsk.germes.app.presentation.admin.bean.i18n;
+package ru.prokurornsk.germes.app.presentation.admin.i18n;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;

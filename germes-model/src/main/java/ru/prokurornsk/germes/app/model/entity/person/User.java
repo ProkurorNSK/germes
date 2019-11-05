@@ -1,9 +1,6 @@
 package ru.prokurornsk.germes.app.model.entity.person;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
 
@@ -14,9 +11,11 @@ import ru.prokurornsk.germes.app.model.entity.base.AbstractEntity;
  */
 @Table(name = "USERS")
 @Entity
-@NamedQuery(name = User.QUERY_FIND_ALL, query = "from User")
+@NamedQueries({ @NamedQuery(name = User.QUERY_FIND_ALL, query = "from User"),
+		@NamedQuery(name = User.QUERY_FIND_BY_USERNAME, query = "from User where userName = :userName") })
 public class User extends AbstractEntity{
 	public static final String QUERY_FIND_ALL = "User.findAll";
+	public static final String QUERY_FIND_BY_USERNAME = "User.findByUserName";
 	/**
 	 * Unique user name within the system
 	 */

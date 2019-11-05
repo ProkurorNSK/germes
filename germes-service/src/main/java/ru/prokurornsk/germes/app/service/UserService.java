@@ -36,4 +36,11 @@ public interface UserService {
 	 */
 	List<User> findAll();
 
+	/**
+	 * Returns user with specified username
+	 * @param userName
+	 * @return
+	 */
+	Optional<User> findByUserName(String userName);
+
 }
