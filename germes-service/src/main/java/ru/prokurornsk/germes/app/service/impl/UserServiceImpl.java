@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import ru.prokurornsk.germes.app.infra.cdi.DBSource;
+import ru.prokurornsk.germes.app.infra.util.SecurityUtil;
 import ru.prokurornsk.germes.app.model.entity.person.User;
 import ru.prokurornsk.germes.app.persistence.repository.UserRepository;
 import ru.prokurornsk.germes.app.service.UserService;
@@ -26,6 +27,11 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	public UserServiceImpl(@DBSource UserRepository userRepository) {
 		this.userRepository = userRepository;
+
+		User user = new User();
+		user.setUserName("root");
+		user.setPassword(SecurityUtil.encryptSHA("54321"));
+		userRepository.save(user);
 	}
 
 	@Override

@@ -9,6 +9,7 @@ import org.apache.shiro.authc.SimpleAccount;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
@@ -29,6 +30,12 @@ public class CDIRealm extends AuthorizingRealm {
 
 	public CDIRealm(UserService userService) {
 		this.userService = userService;
+
+		HashedCredentialsMatcher credentialsMatcher = new HashedCredentialsMatcher();
+		credentialsMatcher.setHashAlgorithmName("SHA-256");
+		credentialsMatcher.setStoredCredentialsHexEncoded(true);
+
+		setCredentialsMatcher(credentialsMatcher);
 	}
 
 	@Override
