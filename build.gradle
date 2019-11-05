@@ -5,7 +5,7 @@ plugins {
 allprojects {
     apply plugin: 'maven'
     group = 'ru.prokurornsk'
-    version = '1.0.0'
+    version = '1.0.1'
 }
 subprojects {
     ext {

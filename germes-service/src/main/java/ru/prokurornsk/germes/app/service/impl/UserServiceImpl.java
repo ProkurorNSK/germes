@@ -28,10 +28,10 @@ public class UserServiceImpl implements UserService {
 	public UserServiceImpl(@DBSource UserRepository userRepository) {
 		this.userRepository = userRepository;
 
-		User user = new User();
+		/*User user = new User();
 		user.setUserName("root");
 		user.setPassword(SecurityUtil.encryptSHA("54321"));
-		userRepository.save(user);
+		userRepository.save(user);*/
 	}
 
 	@Override
