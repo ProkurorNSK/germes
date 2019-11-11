@@ -4,4 +4,5 @@ dependencies {
     compile 'org.glassfish.hk2.external:javax.inject:2.5.0-b36'
     compile 'org.reflections:reflections:0.9.11'
     compile 'com.zaxxer:HikariCP:3.4.1'
+    testRuntime 'com.h2database:h2:' + h2Version
 }
