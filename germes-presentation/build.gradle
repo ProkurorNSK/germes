@@ -2,7 +2,8 @@
     id "com.craigburke.karma" version "1.4.4"
 }*/
 
-apply plugin: 'org.akhikhl.gretty'
+//apply plugin: 'org.akhikhl.gretty'
+apply plugin: "org.gretty"
 apply plugin: 'war'
 
 dependencies {
@@ -11,13 +12,20 @@ dependencies {
 
 gretty {
     contextPath = ''
-    servletContainer = 'tomcat8'
+    servletContainer = 'tomcat9'
 }
 
 war {
     exclude 'node_modules', 'test', 'dist', 'dest', 'Gruntfile.js', 'gulpfile.js', 'package.json', 'package-lock.json', 'bower.json'
 }
 
+allprojects {
+    repositories {
+        jcenter {
+            url "https://jcenter.bintray.com/"
+        }
+    }
+}
 
 /*karma {
     basePath = '../src/main/webapp'

@@ -1,5 +1,6 @@
 apply plugin: 'war'
-apply plugin: 'org.akhikhl.gretty'
+//apply plugin: 'org.akhikhl.gretty'
+apply plugin: "org.gretty"
 
 dependencies {
     compile project(':germes-service')
@@ -26,5 +27,13 @@ repositories {
 
 gretty {
     contextPath = '/admin'
-    servletContainer = 'tomcat8'
+    servletContainer = 'tomcat9'
+}
+
+allprojects {
+    repositories {
+        jcenter {
+            url "https://jcenter.bintray.com/"
+        }
+    }
 }

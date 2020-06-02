@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="germes.germes-admin.main" target="1.8" />
-      <module name="germes.germes-admin.test" target="1.8" />
-      <module name="germes.germes-model.main" target="1.8" />
-      <module name="germes.germes-model.test" target="1.8" />
-      <module name="germes.germes-presentation.main" target="1.8" />
-      <module name="germes.germes-presentation.test" target="1.8" />
-      <module name="germes.germes-rest.main" target="1.8" />
-      <module name="germes.germes-rest.test" target="1.8" />
-      <module name="germes.germes-service.main" target="1.8" />
-      <module name="germes.germes-service.test" target="1.8" />
+    <bytecodeTargetLevel target="1.8">
       <module name="ru.prokurornsk.germes-model.main" target="1.8" />
       <module name="ru.prokurornsk.germes-model.test" target="1.8" />
       <module name="ru.prokurornsk.germes-persistence.main" target="1.8" />
@@ -20,18 +10,7 @@
       <module name="ru.prokurornsk.germes-presentation.test" target="1.8" />
       <module name="ru.prokurornsk.germes-service.main" target="1.8" />
       <module name="ru.prokurornsk.germes-service.test" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-admin.main" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-admin.test" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-model.main" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-model.test" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-persistence.main" target="1.8" />
       <module name="ru.prokurornsk.germes.germes-persistence.test" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-presentation.main" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-presentation.test" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-rest.main" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-rest.test" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-service.main" target="1.8" />
-      <module name="ru.prokurornsk.germes.germes-service.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

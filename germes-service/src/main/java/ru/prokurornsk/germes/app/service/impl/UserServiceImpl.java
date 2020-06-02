@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
 		/*User user = new User();
 		user.setUserName("root");
-		user.setPassword(SecurityUtil.encryptSHA("54321"));
+		user.setPassword(SecurityUtil.encryptSHA("123"));
 		userRepository.save(user);*/
 	}
 
